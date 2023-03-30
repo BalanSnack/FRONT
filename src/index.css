@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: SUIT, GmarketSans, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -70,4 +70,44 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+@font-face {
+  font-family: "SUIT-Regular";
+  font-style: normal;
+  font-weight: 400;
+  src: local("SUIT"), url(./assets/fonts/SUIT-Regular.woff2) format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SUIT-Medium";
+  font-style: normal;
+  font-weight: 500;
+  src: local("SUIT"), url(./assets/fonts/SUIT-Medium.woff2) format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SUIT-SemiBold";
+  font-style: normal;
+  font-weight: 600;
+  src: local("SUIT"), url(./assets/fonts/SUIT-SemiBold.woff2) format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SUIT-Bold";
+  font-style: normal;
+  font-weight: 700;
+  src: local("SUIT"), url(./assets/fonts/SUIT-Bold.woff2) format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "GmarketSans-Bold";
+  font-style: normal;
+  font-weight: 700;
+  src: local("GmarketSans"), url(./assets/fonts/GmarketSans-Bold.woff2) format("woff2");
+  font-display: swap;
 }
