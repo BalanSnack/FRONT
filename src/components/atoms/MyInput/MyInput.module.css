@@ -1,0 +1,5 @@
+.inputBox {
+  @apply w-full shadow-input p-4;
+  border-radius: 10px;
+  font-family: "gmarketBold";
+}
