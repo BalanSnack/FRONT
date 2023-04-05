@@ -4,11 +4,24 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom";
 
 describe("MyModal", () => {
+  let modalRoot: HTMLElement;
+
+  beforeEach(() => {
+    modalRoot = document.createElement("div");
+    modalRoot.setAttribute("id", "modal-root");
+    document.body.appendChild(modalRoot);
+  });
+
+  afterEach(() => {
+    document.body.removeChild(modalRoot);
+  });
+
   it("renders children when isOpen is true", () => {
     render(
       <MyModal isOpen={true} closeModal={() => {}}>
         <h1>Test Modal</h1>
       </MyModal>,
+      { container: modalRoot },
     );
     expect(screen.getByText("Test Modal")).toBeInTheDocument();
   });
@@ -18,17 +31,18 @@ describe("MyModal", () => {
       <MyModal isOpen={false} closeModal={() => {}}>
         <h1>Test Modal</h1>
       </MyModal>,
+      { container: modalRoot },
     );
     expect(screen.queryByText("Test Modal")).toBeNull();
   });
 
   it("calls closeModal when overlay is clicked", () => {
     const closeModalMock = jest.fn();
-
     render(
       <MyModal isOpen={true} closeModal={closeModalMock}>
         <h1>Test Modal</h1>
       </MyModal>,
+      { container: modalRoot },
     );
 
     const modalOverlay = screen.getByTestId("modalOverlay");
@@ -44,6 +58,7 @@ describe("MyModal", () => {
       <MyModal isOpen={true} closeModal={closeModalMock}>
         <h1>Test Modal</h1>
       </MyModal>,
+      { container: modalRoot },
     );
 
     const xMarkIcon = screen.getByTestId("xMarkIcon");
