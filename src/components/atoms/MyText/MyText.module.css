@@ -1,5 +1,5 @@
 .myTextBox {
-  @apply w-full shadow-input p-4 text-left break-words;
+  @apply w-full shadow-input text-left break-all;
   border-radius: 10px;
   font-family: "gmarketBold";
   background: rgba(246, 246, 246, 1);
