@@ -6,7 +6,7 @@
   background: rgba(246, 246, 246, 1);
 }
 
-input {
+.myInput {
   @apply focus:outline-none flex-1;
   background: none;
 }
