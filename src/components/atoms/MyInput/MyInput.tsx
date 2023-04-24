@@ -19,6 +19,7 @@ export default function MyInput({ value, inputHandler, isClearShow = false }: in
     <div className={frameStyle(isFocused)}>
       <input
         type="text"
+        className={styles.myInput}
         value={value}
         onChange={(e) => inputHandler(e.target.value)}
         onFocus={() => setIsFocused(true)}
