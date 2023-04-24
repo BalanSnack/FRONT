@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./MyInput.module.css";
+import { XCircleIcon } from "@heroicons/react/24/solid";
 
 type inputProps = {
   value: string | number;
@@ -8,17 +9,28 @@ type inputProps = {
 };
 
 export default function MyInput({ value, inputHandler, isClearShow = false }: inputProps) {
+  const [isFocused, setIsFocused] = useState(false);
+
+  const frameStyle = (isFocused: boolean) => {
+    return `${styles.frame} ${isFocused && styles.onFocus}`;
+  };
+
   return (
-    <>
-      <div className="w-full flex">
-        <input
-          id="inputValue"
-          className={styles.inputBox}
-          value={value}
-          onChange={(e) => inputHandler(e.target.value)}
+    <div className={frameStyle(isFocused)}>
+      <input
+        type="text"
+        value={value}
+        onChange={(e) => inputHandler(e.target.value)}
+        onFocus={() => setIsFocused(true)}
+        onBlur={() => setIsFocused(false)}
+      />
+      {isClearShow && (
+        <XCircleIcon
+          color="#B8BBCB"
+          className={styles.clearIcon}
+          onClick={() => inputHandler("")}
         />
-        {isClearShow ? <button onClick={() => inputHandler("")}>초기화</button> : null}
-      </div>
-    </>
+      )}
+    </div>
   );
 }

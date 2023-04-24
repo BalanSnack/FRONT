@@ -1,6 +1,20 @@
-.inputBox {
-  @apply w-full shadow-input p-4;
+.frame {
+  @apply w-full shadow-input p-4 flex-auto gap-1;
+  @apply flex;
   border-radius: 10px;
   font-family: "gmarketBold";
   background: rgba(246, 246, 246, 1);
+}
+
+input {
+  @apply focus:outline-none flex-1;
+  background: none;
+}
+
+.onFocus {
+  @apply shadow-selectedComment;
+}
+
+.clearIcon {
+  @apply w-7 h-7 cursor-pointer;
 }
