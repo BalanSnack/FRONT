@@ -49,10 +49,16 @@ module.exports = {
           "inset -2.18px -2.18px 6.54px #FFFFFF, inset 2.18px 2.18px 6.54px rgba(174, 174, 192, 0.4)",
         input:
           "inset -2px 2px 4px rgba(204, 204, 204, 0.2), inset 2px -2px 4px rgba(204, 204, 204, 0.2), inset -2px -2px 4px rgba(255, 255, 255, 0.9), inset 2px 2px 5px rgba(204, 204, 204, 0.9)",
+        selectedInput:
+          "inset -1px 1px 2px rgba(204, 204, 204, 0.2), inset 1px -1px 2px rgba(204, 204, 204, 0.2), inset -1px -1px 2px rgba(255, 255, 255, 0.9), inset 1px 1px 2px rgba(204, 204, 204, 0.9)",
         inputPink:
           "1px 1px 2px rgba(255, 255, 255, 0.3), -1px -1px 2px rgba(212, 212, 212, 0.5), inset -1px 1px 2px rgba(212, 212, 212, 0.2), inset 1px -1px 2px rgba(212, 212, 212, 0.2), inset -1px -1px 2px rgba(255, 255, 255, 0.9), inset 1px 1px 3px rgba(212, 212, 212, 0.9)",
+        selectedInputPink:
+          "0.5px 0.5px 1px rgba(255, 255, 255, 0.3), -0.5px -0.5px 1px rgba(212, 212, 212, 0.5), inset -0.5px 0.5px 1px rgba(212, 212, 212, 0.2), inset 0.5px -0.5px 1px rgba(212, 212, 212, 0.2), inset -0.5px -0.5px 1px rgba(255, 255, 255, 0.9), inset 0.5px 0.5px 1px rgba(212, 212, 212, 0.9)",
         inputBlue:
           "inset -1px 1px 2px rgba(174, 187, 206, 0.2), inset 1px -1px 2px rgba(174, 187, 206, 0.2), inset -1px -1px 2px rgba(230, 249, 255, 0.9), inset 1px 1px 3px rgba(174, 187, 206, 0.9)",
+        selectedInputBlue:
+          "inset -0.5px 0.5px 1px rgba(174, 187, 206, 0.2), inset 0.5px -0.5px 1px rgba(174, 187, 206, 0.2), inset -0.5px -0.5px 1px rgba(230, 249, 255, 0.9), inset 0.5px 0.5px 1px rgba(174, 187, 206, 0.9)",
         pagination:
           "-1px 1px 2px rgba(197, 197, 199, 0.2), 1px -1px 2px rgba(197, 197, 199, 0.2), -1px -1px 2px rgba(255, 255, 255, 0.9), 1px 1px 3px rgba(197, 197, 199, 0.9)",
       },
