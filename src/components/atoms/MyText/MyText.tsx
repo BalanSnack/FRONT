@@ -34,7 +34,7 @@ const getFontStyle = (size: sizeType, color: colorType) => {
   return `${fontColor[color]} ${sizes[size]}`;
 };
 
-export default function MyText({ value, size = "md", color = "main" }: myTextProps) {
+export default function MyText({ value, size = "md", color = "font1" }: myTextProps) {
   return (
     <div className={frameStyle[size]}>
       <span className={getFontStyle(size, color)}>{value}</span>
