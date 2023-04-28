@@ -1,9 +1,13 @@
 import React from "react";
 import styles from "./MyText.module.css";
 
+type sizeType = "sm" | "md" | "lg";
+type colorType = "main" | "pink" | "blue" | "font1" | "font2";
+
 interface myTextProps {
   value: string;
-  size?: "sm" | "md" | "lg";
+  size?: sizeType;
+  color?: colorType;
 }
 
 const frameStyle = {
@@ -18,10 +22,22 @@ const sizes = {
   lg: "text-[1.5rem]",
 };
 
-export default function MyText({ value, size = "md" }: myTextProps) {
+const fontColor = {
+  main: "text-main",
+  pink: "text-pink-900",
+  blue: "text-sky-900",
+  font1: "text-font1",
+  font2: "text-font2",
+};
+
+const getFontStyle = (size: sizeType, color: colorType) => {
+  return `${fontColor[color]} ${sizes[size]}`;
+};
+
+export default function MyText({ value, size = "md", color = "main" }: myTextProps) {
   return (
     <div className={frameStyle[size]}>
-      <span className={sizes[size]}>{value}</span>
+      <span className={getFontStyle(size, color)}>{value}</span>
     </div>
   );
 }
