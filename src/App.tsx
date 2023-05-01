@@ -1,6 +1,5 @@
 import { useState } from "react";
 import reactLogo from "./assets/react.svg";
-import MyIcon from "./components/atoms/MyIcon/MyIcon";
 import "./App.css";
 
 function App() {
