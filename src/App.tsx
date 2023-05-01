@@ -1,6 +1,6 @@
 import { useState } from "react";
 import reactLogo from "./assets/react.svg";
-import MyModal from "./components/atoms/MyModal/MyModal";
+import MyIcon from "./components/atoms/MyIcon/MyIcon";
 import "./App.css";
 
 function App() {
@@ -24,6 +24,7 @@ function App() {
         </p>
       </div>
       <p className="read-the-docs">Click on the Vite and React logos to learn more</p>
+      <MyIcon name="cat_face" />
     </div>
   );
 }
