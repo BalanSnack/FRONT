@@ -15,17 +15,17 @@ interface SquareBtnProps {
 const getStyle = ({ theme, isSelected = false }: SquareBtnProps) => {
   switch (theme) {
     case "myPage":
-      return `text-main rounded-[5px] px-4 py-1`;
+      return `text-main rounded-[5px] px-5 py-3`;
     case "comments":
-      return `text-main rounded-[21px] px-4 py-1`;
+      return `text-main rounded-[21px] px-5 py-3`;
     case "commentReport":
-      return `text-font2 rounded-[5px] p-2`;
+      return `text-font2 rounded-[5px] p-3`;
     case "commentLike":
-      return `rounded-[5px] p-2 ${isSelected ? `text-pink-900` : `text-font2`}`;
+      return `rounded-[5px] p-3 ${isSelected ? `text-pink-900` : `text-font2`}`;
     case "gameReport":
-      return `rounded-[5px] p-2 text-main`;
+      return `rounded-[5px] p-3 text-main`;
     case "gameLike":
-      return `rounded-[5px] p-2 ${isSelected ? `text-pink-900` : `text-font2`}`;
+      return `rounded-[5px] p-3 ${isSelected ? `text-pink-900` : `text-font2`}`;
   }
 };
 
@@ -36,10 +36,12 @@ export default function SquareBtn(props: SquareBtnProps) {
         props.isSelected ? `${styles.selectedSquareBtn}` : `${styles.squareBtn}`
       }`}
     >
-      <div className="p-2 items-center flex text-center font-suitMedium">
-        {props.icon === "report" && <ExclamationCircleIcon className="w-6 h-6" />}
-        {props.icon === "heart" && <HeartIcon className="w-6 h-6" />}
-        {props.text}
+      <div className="items-center flex justify-between text-center font-suitMedium">
+        <div>
+          {props.icon === "report" && <ExclamationCircleIcon className="w-6 h-6" />}
+          {props.icon === "heart" && <HeartIcon className="w-6 h-6" />}
+        </div>
+        <span>{props.text}</span>
       </div>
     </div>
   );
