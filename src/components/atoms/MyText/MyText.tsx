@@ -1,12 +1,14 @@
 import React from "react";
 
-type sizeType = "sm" | "md" | "lg";
-type colorType = "main" | "pink" | "blue" | "font1" | "font2";
+type Size = "sm" | "md" | "lg";
+type Color = "main" | "pink" | "blue" | "font1" | "font2";
+type Weight = "regular" | "medium" | "semi" | "bold";
 
 interface myTextProps {
   children: React.ReactNode;
-  size?: sizeType;
-  color?: colorType;
+  size?: Size;
+  color?: Color;
+  weight?: Weight;
 }
 
 const sizes = {
@@ -23,10 +25,22 @@ const fontColor = {
   font2: "text-font2",
 };
 
-const getFontStyle = (size: sizeType, color: colorType) => {
-  return `${fontColor[color]} ${sizes[size]}`;
+const fontWeight = {
+  regular: "font-suitRegular",
+  medium: "font-suitMedium",
+  semi: "font-suitSemiBold",
+  bold: "font-suitBold",
 };
 
-export default function MyText({ children, size = "md", color = "font1" }: myTextProps) {
-  return <span className={getFontStyle(size, color)}>{children}</span>;
+const getFontStyle = (size: Size, color: Color, weight: Weight) => {
+  return `${fontColor[color]} ${sizes[size]} ${fontWeight[weight]}`;
+};
+
+export default function MyText({
+  children,
+  size = "md",
+  color = "main",
+  weight = "regular",
+}: myTextProps) {
+  return <span className={getFontStyle(size, color, weight)}>{children}</span>;
 }

@@ -35,6 +35,8 @@ module.exports = {
     extend: {
       boxShadow: {
         card: "-4px -4px 6px rgba(255, 255, 255, 0.8), 3px 3px 8px rgba(166, 180, 200, 0.7)",
+        selectedCard:
+          "-4px -4px 6px rgba(166, 180, 200, 0.7), 3px 3px 8px rgba(255, 255, 255, 0.8)",
         main: "-2px 2px 4px rgba(195, 195, 195, 0.2), 2px -2px 4px rgba(195, 195, 195, 0.2), -2px -2px 4px rgba(255, 255, 255, 0.9), 2px 2px 5px rgba(195, 195, 195, 0.9), inset 1px 1px 2px rgba(255, 255, 255, 0.3), inset -1px -1px 2px rgba(195, 195, 195, 0.5)",
         square: "-2.18px -2.18px 6.54px #FFFFFF, 2.18px 2.18px 6.54px rgba(174, 174, 192, 0.4)",
         selectedSquare:
