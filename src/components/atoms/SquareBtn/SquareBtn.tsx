@@ -36,7 +36,7 @@ export default function SquareBtn(props: SquareBtnProps) {
         props.isSelected ? `${styles.selectedSquareBtn}` : `${styles.squareBtn}`
       }`}
     >
-      <div className="items-center flex justify-between text-center font-suitMedium">
+      <div className="items-center flex justify-between text-center font-suitMedium w-full h-full">
         <div>
           {props.icon === "report" && <ExclamationCircleIcon className="w-6 h-6" />}
           {props.icon === "heart" && <HeartIcon className="w-6 h-6" />}
