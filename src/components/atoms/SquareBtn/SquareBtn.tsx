@@ -3,6 +3,7 @@ import styles from "./SquareBtn.module.css";
 
 import { HeartIcon } from "@heroicons/react/24/solid";
 import { ExclamationCircleIcon } from "@heroicons/react/24/outline";
+import { UilCommentAltLines } from "@iconscout/react-unicons";
 
 interface SquareBtnProps {
   theme: "myPage" | "comments" | "commentReport" | "commentLike" | "gameReport" | "gameLike";
@@ -29,6 +30,21 @@ const getStyle = ({ theme, isSelected = false }: SquareBtnProps) => {
   }
 };
 
+const getIcon = ({ theme, icon }: SquareBtnProps) => {
+  if (theme === "comments") {
+    return <UilCommentAltLines className="w-7 h-7 pr-2" />;
+  } else if (icon === "report") {
+    return <ExclamationCircleIcon className="w-6 h-6" />;
+  } else if (icon === "heart") {
+    switch (theme) {
+      case "gameLike":
+        return <HeartIcon className="w-6 h-6" />;
+      case "commentLike":
+        return <HeartIcon className="w-7 h-7 pr-2" />;
+    }
+  }
+};
+
 export default function SquareBtn(props: SquareBtnProps) {
   return (
     <div
@@ -37,10 +53,7 @@ export default function SquareBtn(props: SquareBtnProps) {
       }`}
     >
       <div className="items-center flex justify-between text-center font-suitMedium w-full h-full">
-        <div>
-          {props.icon === "report" && <ExclamationCircleIcon className="w-6 h-6" />}
-          {props.icon === "heart" && <HeartIcon className="w-6 h-6" />}
-        </div>
+        <div>{getIcon(props)}</div>
         <span>{props.text}</span>
       </div>
     </div>
