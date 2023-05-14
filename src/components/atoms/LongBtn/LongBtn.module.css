@@ -1,5 +1,5 @@
 .longBtn {
-  @apply shadow-square rounded-md flex justify-center items-center font-suitRegular px-4 py-2 h-full w-full;
+  @apply shadow-square px-6 py-4 h-full w-full;
 }
 
 .longBtn:hover {
@@ -11,5 +11,12 @@
 }
 
 .selectedLongBtn {
-  @apply shadow-selectedSquare rounded-md flex justify-center items-center px-2 py-2 h-full w-full;
+  @apply shadow-selectedSquare rounded-md px-6 py-4 h-full w-full;
+}
+
+.banSelect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
