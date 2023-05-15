@@ -16,7 +16,7 @@ const getStyle = ({ theme, isSelected }: LongBtnProps) => {
   return colors[theme];
 };
 
-const getIcon = (theme: string) => {
+const getIcon = (theme: "google" | "kakao") => {
   const icon = {
     google: <img src="src/assets/google_icon.svg" className="inline-block pr-6" />,
     kakao: <img src="src/assets/kakao_icon.svg" className="inline-block pr-6" />,
