@@ -28,11 +28,9 @@ a:hover {
 }
 
 body {
-  margin: 0;
-  display: flex;
   place-items: center;
-  max-width: 640px;
   min-height: 100vh;
+  background-color: #f0f0f3;
 }
 
 h1 {
