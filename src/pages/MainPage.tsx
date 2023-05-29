@@ -1,17 +1,21 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import MainCardBtn from "@/components/organisms/MainCardBtn/MainCardBtn";
+import MyText from "@/components/atoms/MyText/MyText";
 
 export default function MainPage() {
   return (
-    <div>
-      <h1>메인페이지</h1>
-      <div className="flex gap-2">
-        <Link to="/game/1">게임</Link>
-        <Link to="/game/create">게임 생성</Link>
-        <Link to="/game/update/1">게임 수정</Link>
-        <Link to="/category">카테고리</Link>
-        <Link to="/category/1">카테고리 내용</Link>
-        <Link to="/myinfo">내 정보</Link>
+    <div className="flex h-full justify-between items-center flex-col">
+      <h1 className="flex">밸런스낵</h1>
+      <div className="flex w-full flex-col gap-3">
+        <MainCardBtn theme="popular" />
+        <div className="flex gap-3">
+          <MainCardBtn theme="new" />
+          <MainCardBtn theme="random" />
+          <MainCardBtn theme="category" />
+        </div>
+      </div>
+      <div className="cursor-pointer underline underline-offset-4 decoration-main">
+        <MyText weight="semi">로그인하고 더 많은 서비스 체험하기</MyText>
       </div>
     </div>
   );

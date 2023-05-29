@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./MainCardBtn.module.css";
 import MyText from "@/components/atoms/MyText/MyText";
+import { useNavigate } from "react-router-dom";
 
 type Theme = "popular" | "new" | "random" | "category";
 
@@ -20,6 +21,13 @@ const getStyle = (theme: Theme) => {
 };
 
 export default function MainCardBtn({ theme }: Props) {
+  const navigate = useNavigate();
+
+  const clickHandler = (e: React.MouseEvent<HTMLDivElement>) => {
+    // 회의 후 router 수정 예정 (2022.5.29)
+    navigate(`/game/1`);
+  };
+
   const themeMsg = {
     popular: "인기",
     new: "신규",
@@ -28,7 +36,11 @@ export default function MainCardBtn({ theme }: Props) {
   };
 
   return (
-    <div className={`${getStyle(theme)} w-full justify-around`} role="mainCardBtn">
+    <div
+      onClick={clickHandler}
+      className={`${getStyle(theme)} w-full justify-around cursor-pointer`}
+      role="mainCardBtn"
+    >
       <img src={`src/assets/images/${theme}_card.png`} />
       <MyText size={theme === "popular" ? "lg" : "md"} weight="medium">
         {themeMsg[theme]}

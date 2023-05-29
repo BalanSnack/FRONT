@@ -41,7 +41,7 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <div style={{ maxWidth: "640px", margin: "auto" }}>
+    <div className="m-auto h-screen max-w-[640px] py-10 px-5">
       <RouterProvider router={router} />
     </div>
   </React.StrictMode>,
