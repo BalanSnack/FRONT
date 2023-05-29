@@ -13,6 +13,6 @@ const getLogo = ({ size }: LogoProps) => {
   }
 };
 
-export default function Logo(props: LogoProps) {
+export default function MyLogo(props: LogoProps) {
   return <div>{getLogo(props)}</div>;
 }
