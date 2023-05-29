@@ -24,8 +24,7 @@ export default function MainCardBtn({ theme }: Props) {
   const navigate = useNavigate();
 
   const clickHandler = (e: React.MouseEvent<HTMLDivElement>) => {
-    // 회의 후 router 수정 예정 (2022.5.29)
-    navigate(`/game/1`);
+    navigate(`/${theme}`);
   };
 
   const themeMsg = {
