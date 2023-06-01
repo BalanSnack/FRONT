@@ -5,6 +5,7 @@ import "./index.css";
 
 import MainPage from "./pages/MainPage";
 import GamePage from "./pages/GamePage";
+import GameRoutePage from "./pages/GameRoutePage";
 import GameCreateOrUpdatePage from "./pages/GameCreateOrUpdatePage";
 import CategoryListPage from "./pages/CategoryListPage";
 import CategoryContentPage from "./pages/CategoryContentPage";
@@ -18,9 +19,29 @@ const router = createBrowserRouter([
   {
     path: "/game",
     children: [
-      { path: ":gameId", element: <GamePage /> },
       { path: "create", element: <GameCreateOrUpdatePage /> },
       { path: "update/:gameId", element: <GameCreateOrUpdatePage /> },
+    ],
+  },
+  {
+    path: "/popular",
+    children: [
+      { path: "", element: <GameRoutePage /> },
+      { path: ":gameId", element: <GamePage /> },
+    ],
+  },
+  {
+    path: "/new",
+    children: [
+      { path: "", element: <GameRoutePage /> },
+      { path: ":gameId", element: <GamePage /> },
+    ],
+  },
+  {
+    path: "/random",
+    children: [
+      { path: "", element: <GameRoutePage /> },
+      { path: ":gameId", element: <GamePage /> },
     ],
   },
   {
