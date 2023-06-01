@@ -1,14 +1,14 @@
 import React from "react";
 
 interface LogoProps {
-  size: "s" | "l";
+  size: "sm" | "lg";
 }
 
 const getLogo = ({ size }: LogoProps) => {
   switch (size) {
-    case "s":
+    case "sm":
       return <img src="src/assets/BalanSnack_logo_s.png" />;
-    case "l":
+    case "lg":
       return <img src="src/assets/BalanSnack_logo_l.png" />;
   }
 };
