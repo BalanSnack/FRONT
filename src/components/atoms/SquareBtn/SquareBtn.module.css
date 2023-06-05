@@ -4,6 +4,7 @@
 
 .squareBtn:active {
   box-shadow: -0.18px -0.18px 3.54px #ffffff, 0.18px 0.18px 3.54px rgba(174, 174, 192, 0.4);
+  @apply shadow-selectedSquare;
 }
 
 .selectedSquareBtn {

@@ -10,28 +10,21 @@ import {
 import { UilCommentAltLines } from "@iconscout/react-unicons";
 
 interface SquareBtnProps {
-  theme:
-    | "baisic"
-    | "myPage"
-    | "comments"
-    | "commentReport"
-    | "commentLike"
-    | "gameReport"
-    | "gameLike";
+  theme: "basic" | "round" | "square" | "commentReport" | "commentLike" | "gameReport" | "gameLike";
   text?: string;
-  icon?: string;
+  icon?: "report" | "heart" | "leftArrow" | "rightArrow";
   isSelected?: boolean;
   clickHandler?: () => void;
 }
 
 const getStyle = ({ theme, isSelected = false }: SquareBtnProps) => {
   switch (theme) {
-    case "baisic":
-      return `text-main w-fit rounded-[5px] p-2`;
-    case "myPage":
+    case "basic":
       return `text-main rounded-[5px] px-5 py-3`;
-    case "comments":
+    case "round":
       return `text-main rounded-[21px] px-5 py-3`;
+    case "square":
+      return `text-main rounded-[5px] p-3 aspect-square`;
     case "commentReport":
       return `text-font2 rounded-[5px] p-3`;
     case "commentLike":
@@ -44,7 +37,7 @@ const getStyle = ({ theme, isSelected = false }: SquareBtnProps) => {
 };
 
 const getIcon = ({ theme, icon }: SquareBtnProps) => {
-  if (theme === "comments") {
+  if (theme === "square") {
     return <UilCommentAltLines className="w-7 h-7 pr-2" />;
   } else if (icon === "report") {
     return <ExclamationCircleIcon className="w-6 h-6" />;
@@ -79,5 +72,5 @@ export default function SquareBtn(props: SquareBtnProps) {
 }
 
 SquareBtn.defaultProps = {
-  theme: "baisic",
+  theme: "basic",
 };
