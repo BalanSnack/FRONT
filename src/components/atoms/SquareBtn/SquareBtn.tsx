@@ -2,19 +2,32 @@ import React from "react";
 import styles from "./SquareBtn.module.css";
 
 import { HeartIcon } from "@heroicons/react/24/solid";
-import { ExclamationCircleIcon } from "@heroicons/react/24/outline";
+import {
+  ExclamationCircleIcon,
+  ChevronLeftIcon,
+  ChevronRightIcon,
+} from "@heroicons/react/24/outline";
 import { UilCommentAltLines } from "@iconscout/react-unicons";
 
 interface SquareBtnProps {
-  theme: "myPage" | "comments" | "commentReport" | "commentLike" | "gameReport" | "gameLike";
+  theme:
+    | "baisic"
+    | "myPage"
+    | "comments"
+    | "commentReport"
+    | "commentLike"
+    | "gameReport"
+    | "gameLike";
   text?: string;
   icon?: string;
   isSelected?: boolean;
-  children: React.ReactNode;
+  clickHandler?: () => void;
 }
 
 const getStyle = ({ theme, isSelected = false }: SquareBtnProps) => {
   switch (theme) {
+    case "baisic":
+      return `text-main w-fit rounded-[5px] p-2`;
     case "myPage":
       return `text-main rounded-[5px] px-5 py-3`;
     case "comments":
@@ -40,17 +53,22 @@ const getIcon = ({ theme, icon }: SquareBtnProps) => {
       case "gameLike":
         return <HeartIcon className="w-6 h-6" />;
       case "commentLike":
-        return <HeartIcon className="w-7 h-7 pr-2" />;
+        return <HeartIcon className="w-7 h-7" />;
     }
+  } else if (icon === "leftArrow") {
+    return <ChevronLeftIcon className="w-4 h-4" />;
+  } else if (icon === "rightArrow") {
+    return <ChevronRightIcon className="w-4 h-4" />;
   }
 };
 
 export default function SquareBtn(props: SquareBtnProps) {
   return (
     <div
-      className={`flex justify-center cursor-pointer ${styles.banSelect} ${getStyle(props)} ${
+      className={`flex w-fit justify-center cursor-pointer ${styles.banSelect} ${getStyle(props)} ${
         props.isSelected ? `${styles.selectedSquareBtn}` : `${styles.squareBtn}`
       }`}
+      onClick={props.clickHandler}
     >
       <div className="items-center flex justify-between text-center font-suitMedium w-full h-full">
         <div>{getIcon(props)}</div>
@@ -59,3 +77,7 @@ export default function SquareBtn(props: SquareBtnProps) {
     </div>
   );
 }
+
+SquareBtn.defaultProps = {
+  theme: "baisic",
+};

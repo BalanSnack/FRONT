@@ -4,7 +4,7 @@ import styles from "./LongBtn.module.css";
 interface LongBtnProps {
   theme: "basic" | "google" | "kakao";
   isSelected?: boolean;
-  children?: React.ReactNode;
+  text: string;
 }
 
 const getStyle = ({ theme, isSelected }: LongBtnProps) => {
@@ -25,12 +25,12 @@ const getIcon = (theme: "basic" | "google" | "kakao") => {
   return icon[theme];
 };
 
-const getContext = ({ theme, children }: LongBtnProps) => {
+const getContext = ({ theme, text }: LongBtnProps) => {
   const context = {
-    basic: <div>{children}</div>,
+    basic: <div>{text}</div>,
     google: (
       <div className="flex justify-center w-full">
-        <span className="font-suitBold text-[#757575] w-full">Sign in with Google</span>
+        <span className="font-suitBold text-[#757575] w-full">구글로 시작하기</span>
       </div>
     ),
     kakao: (
