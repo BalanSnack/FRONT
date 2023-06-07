@@ -3,6 +3,13 @@ import styles from "../MainCardBtn.module.css";
 import { render } from "@testing-library/react";
 import "@testing-library/jest-dom";
 
+const mockedUsedNavigate = jest.fn();
+
+jest.mock("react-router-dom", () => ({
+  ...(jest.requireActual("react-router-dom") as any),
+  useNavigate: () => mockedUsedNavigate,
+}));
+
 describe("MainCardBtn", () => {
   const themeStyle = {
     popular: "bg-gradient-to-r from-pink-500 to-sky-500 flex-row-reverse aspect-[4/2]",
