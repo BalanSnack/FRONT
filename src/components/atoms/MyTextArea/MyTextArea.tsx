@@ -6,7 +6,7 @@ type inputProps = {
   inputHandler: React.Dispatch<React.SetStateAction<string>>;
 };
 
-export default function MyInput({ value, inputHandler }: inputProps) {
+export default function MyTextArea({ value, inputHandler }: inputProps) {
   return (
     <>
       <div className="w-full flex">

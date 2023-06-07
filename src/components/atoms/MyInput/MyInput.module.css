@@ -1,5 +1,5 @@
 .frame {
-  @apply w-full shadow-input p-4 flex-auto gap-1;
+  @apply w-full shadow-input p-3 flex-auto gap-1;
   @apply flex;
   border-radius: 10px;
   font-family: "gmarketBold";
