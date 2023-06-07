@@ -6,13 +6,14 @@ import {
   ExclamationCircleIcon,
   ChevronLeftIcon,
   ChevronRightIcon,
+  ChatBubbleBottomCenterTextIcon,
 } from "@heroicons/react/24/outline";
-import { UilCommentAltLines } from "@iconscout/react-unicons";
+// import { UilCommentAltLines } from "@iconscout/react-unicons";
 
 interface SquareBtnProps {
   theme: "basic" | "round" | "square" | "commentReport" | "commentLike" | "gameReport" | "gameLike";
   text?: string;
-  icon?: "report" | "heart" | "leftArrow" | "rightArrow";
+  icon?: "report" | "heart" | "leftArrow" | "rightArrow" | "comment";
   isSelected?: boolean;
   clickHandler?: () => void;
 }
@@ -24,7 +25,7 @@ const getStyle = ({ theme, isSelected = false }: SquareBtnProps) => {
     case "round":
       return `text-main rounded-[21px] px-5 py-3`;
     case "square":
-      return `text-main rounded-[5px] p-3 aspect-square`;
+      return `text-main rounded-[5px] w-9 h-9`;
     case "commentReport":
       return `text-font2 rounded-[5px] p-3`;
     case "commentLike":
@@ -37,8 +38,8 @@ const getStyle = ({ theme, isSelected = false }: SquareBtnProps) => {
 };
 
 const getIcon = ({ theme, icon }: SquareBtnProps) => {
-  if (theme === "square") {
-    return <UilCommentAltLines className="w-7 h-7 pr-2" />;
+  if (icon === "comment") {
+    return <ChatBubbleBottomCenterTextIcon className="w-7 h-7 pr-2" />;
   } else if (icon === "report") {
     return <ExclamationCircleIcon className="w-6 h-6" />;
   } else if (icon === "heart") {
@@ -63,7 +64,11 @@ export default function SquareBtn(props: SquareBtnProps) {
       }`}
       onClick={props.clickHandler}
     >
-      <div className="items-center flex justify-between text-center font-suitMedium w-full h-full">
+      <div
+        className={`items-center flex text-center font-suitMedium w-full h-full ${
+          props.theme === "square" ? "justify-center" : "justify-between"
+        }`}
+      >
         <div>{getIcon(props)}</div>
         <span>{props.text}</span>
       </div>
