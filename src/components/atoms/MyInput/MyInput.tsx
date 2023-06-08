@@ -6,17 +6,25 @@ type inputProps = {
   value: string | number;
   inputHandler: React.Dispatch<React.SetStateAction<string>>;
   isClearShow?: boolean;
+  rounded?: boolean;
 };
 
-export default function MyInput({ value, inputHandler, isClearShow = false }: inputProps) {
+export default function MyInput({
+  value,
+  inputHandler,
+  isClearShow = false,
+  rounded = false,
+}: inputProps) {
   const [isFocused, setIsFocused] = useState(false);
 
-  const frameStyle = (isFocused: boolean) => {
-    return `${styles.frame} ${isFocused && styles.onFocus}`;
+  const frameStyle = (isFocused: boolean, rounded: boolean) => {
+    return `${styles.frame} ${isFocused && styles.onFocus} ${
+      rounded ? "rounded-[35px]" : "rounded-[10px]"
+    }`;
   };
 
   return (
-    <div className={frameStyle(isFocused)}>
+    <div className={frameStyle(isFocused, rounded)}>
       <input
         type="text"
         className={styles.myInput}

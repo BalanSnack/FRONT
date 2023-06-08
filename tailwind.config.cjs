@@ -40,6 +40,7 @@ module.exports = {
           "-4px -4px 6px rgba(166, 180, 200, 0.7), 3px 3px 8px rgba(255, 255, 255, 0.8)",
         main: "-2px 2px 4px rgba(195, 195, 195, 0.2), 2px -2px 4px rgba(195, 195, 195, 0.2), -2px -2px 4px rgba(255, 255, 255, 0.9), 2px 2px 5px rgba(195, 195, 195, 0.9), inset 1px 1px 2px rgba(255, 255, 255, 0.3), inset -1px -1px 2px rgba(195, 195, 195, 0.5)",
         square: "-2.18px -2.18px 6.54px #FFFFFF, 2.18px 2.18px 6.54px rgba(174, 174, 192, 0.4)",
+        smallSquare: "-1px -1px 3px #FFFFFF, 1.5px 1.5px 3px rgba(174, 174, 192, 0.4);",
         selectedSquare:
           "inset -2.18px -2.18px 6.54px #FFFFFF, inset 2.18px 2.18px 6.54px rgba(174, 174, 192, 0.4)",
         round:
@@ -51,7 +52,7 @@ module.exports = {
         selectedComment:
           "inset -2.18px -2.18px 6.54px #FFFFFF, inset 2.18px 2.18px 6.54px rgba(174, 174, 192, 0.4)",
         input:
-          "inset -2px 2px 4px rgba(204, 204, 204, 0.2), inset 2px -2px 4px rgba(204, 204, 204, 0.2), inset -2px -2px 4px rgba(255, 255, 255, 0.9), inset 2px 2px 5px rgba(204, 204, 204, 0.9)",
+          "inset -2px 2px 4px rgba(204, 204, 204, 0.2), inset 2px -2px 4px rgba(204, 204, 204, 0.2), inset -2px -2px 4px rgba(255, 255, 255, 0.9), inset 2px 2px 5px rgba(204, 204, 204, 0.9);",
         selectedInput:
           "inset -1px 1px 2px rgba(204, 204, 204, 0.2), inset 1px -1px 2px rgba(204, 204, 204, 0.2), inset -1px -1px 2px rgba(255, 255, 255, 0.9), inset 1px 1px 2px rgba(204, 204, 204, 0.9)",
         inputPink:

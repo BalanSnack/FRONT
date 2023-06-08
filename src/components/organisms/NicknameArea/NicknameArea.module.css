@@ -1,6 +1,10 @@
 .nicknameAreaBox {
-  @apply flex justify-between items-center px-5 py-3 gap-3;
+  @apply flex justify-between items-center px-5 h-20 gap-3;
   @apply w-full bg-gradient-to-r from-pink-500 to-sky-500 rounded-lg;
   box-shadow: -2.17893px -2.17893px 6.5368px #ffffff,
     2.17893px 2.17893px 6.5368px rgba(174, 174, 192, 0.4);
+}
+
+.nicknameChangeBtn {
+  @apply bg-back px-2 py-1 rounded-[5px] shadow-smallSquare cursor-pointer;
 }

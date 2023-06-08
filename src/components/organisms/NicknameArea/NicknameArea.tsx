@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "./NicknameArea.module.css";
 import MyInput from "@/components/atoms/MyInput/MyInput";
-import SquareBtn from "@/components/atoms/SquareBtn/SquareBtn";
 import MyText from "@/components/atoms/MyText/MyText";
 import { useState } from "react";
 
@@ -27,12 +26,16 @@ export default function NicknameArea({ nickname, nicknameHandler, nicknameChange
     <div className={styles.nicknameAreaBox}>
       {isEdit ? (
         <div className="flex flex-1">
-          <MyInput value={nickname} inputHandler={nicknameHandler} />
+          <MyInput value={nickname} inputHandler={nicknameHandler} rounded={true} />
         </div>
       ) : (
-        <MyText weight="semi">{nickname}</MyText>
+        <MyText color="font1" weight="semi">
+          {nickname}
+        </MyText>
       )}
-      <SquareBtn text={isEdit ? "수정완료" : "수정하기"} clickHandler={EditBtnClickHandler} />
+      <div className={styles.nicknameChangeBtn} onClick={EditBtnClickHandler}>
+        <MyText weight="medium">{isEdit ? "수정완료" : "수정하기"}</MyText>
+      </div>
     </div>
   );
 }
