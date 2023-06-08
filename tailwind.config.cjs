@@ -52,7 +52,7 @@ module.exports = {
         selectedComment:
           "inset -2.18px -2.18px 6.54px #FFFFFF, inset 2.18px 2.18px 6.54px rgba(174, 174, 192, 0.4)",
         input:
-          "inset -2px 2px 4px rgba(204, 204, 204, 0.2), inset 2px -2px 4px rgba(204, 204, 204, 0.2), inset -2px -2px 4px rgba(255, 255, 255, 0.9), inset 2px 2px 5px rgba(204, 204, 204, 0.9);",
+          "inset -2px 2px 4px rgba(204, 204, 204, 0.2), inset 2px -2px 4px rgba(204, 204, 204, 0.2), inset -2px -2px 4px rgba(255, 255, 255, 0.9), inset 2px 2px 5px rgba(204, 204, 204, 0.9)",
         selectedInput:
           "inset -1px 1px 2px rgba(204, 204, 204, 0.2), inset 1px -1px 2px rgba(204, 204, 204, 0.2), inset -1px -1px 2px rgba(255, 255, 255, 0.9), inset 1px 1px 2px rgba(204, 204, 204, 0.9)",
         inputPink:
