@@ -34,7 +34,7 @@ export default function NicknameArea({ nickname, nicknameHandler, nicknameChange
         </MyText>
       )}
       <div className={styles.nicknameChangeBtn} onClick={EditBtnClickHandler}>
-        <MyText weight="medium">{isEdit ? "수정완료" : "수정하기"}</MyText>
+        <MyText weight="medium">{isEdit ? "확인" : "수정하기"}</MyText>
       </div>
     </div>
   );
