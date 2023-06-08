@@ -2,7 +2,7 @@ import React from "react";
 import SquareBtn from "@/components/atoms/SquareBtn/SquareBtn";
 
 interface Props {
-  fullPage: number;
+  totalPage: number;
   page: number;
   pageHandler: (pageNum: number) => void;
 }
@@ -12,7 +12,7 @@ export default function Pagination(props: Props) {
 
   const pageBtns = [];
   for (let i = 0; i < 5; i++) {
-    if (startNum + i > props.fullPage) {
+    if (startNum + i > props.totalPage) {
       break;
     } else {
       pageBtns.push(
@@ -34,7 +34,7 @@ export default function Pagination(props: Props) {
   };
 
   const pageUpClickHandler = (pageNum: number) => {
-    if (pageNum < props.fullPage) {
+    if (pageNum < props.totalPage) {
       props.pageHandler(pageNum + 1);
     } else return;
   };

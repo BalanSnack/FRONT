@@ -1,6 +1,6 @@
 import React from "react";
-import SquareBtn from "@/components/atoms/SquareBtn/SquareBtn";
 import NicknameArea from "@/components/organisms/NicknameArea/NicknameArea";
+import MyInfoContentTable from "@/components/organisms/MyInfoContentArea/MyInfoContentTable";
 import { useState } from "react";
 
 export default function MyInfoPage() {
@@ -16,19 +16,13 @@ export default function MyInfoPage() {
   };
 
   return (
-    <div className="flex flex-col gap-5">
+    <div className="flex-1 flex-col flex gap-5">
       <NicknameArea
         nickname={nickname}
         nicknameHandler={nicknameHandler}
         nicknameChangeHandler={nicknameChangeHandler}
       />
-      <div>
-        <div className="flex gap-3 justify-between">
-          <SquareBtn text="내가 만든 게임" />
-          <SquareBtn text="내가 쓴 댓글" />
-          <SquareBtn text="좋아요 누른 게임" />
-        </div>
-      </div>
+      <MyInfoContentTable />
     </div>
   );
 }

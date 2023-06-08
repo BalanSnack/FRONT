@@ -1,0 +1,21 @@
+.itemBox {
+  @apply flex flex-col w-full px-3 py-2 gap-1 my-3;
+  @apply bg-back shadow-square rounded-[10px] cursor-pointer;
+}
+
+.itemBox:active,
+.itemBox:hover {
+  @apply shadow-selectedSquare;
+}
+
+.topArea {
+  @apply flex w-full justify-between items-end;
+}
+
+.countItem {
+  @apply flex gap-1;
+}
+
+.countArea {
+  @apply flex gap-3;
+}

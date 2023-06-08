@@ -1,0 +1,12 @@
+.contentBtn {
+  @apply flex justify-center rounded-[5px];
+  @apply shadow-square p-2 h-full w-full cursor-pointer;
+}
+
+.contentBtn:active {
+  @apply shadow-selectedSquare;
+}
+
+.selectedContentBtn {
+  @apply shadow-selectedSquare bg-back;
+}

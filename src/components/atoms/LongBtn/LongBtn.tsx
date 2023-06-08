@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import MyText from "../MyText/MyText";
 import styles from "./LongBtn.module.css";
 
 interface LongBtnProps {
@@ -27,7 +28,7 @@ const getIcon = (theme: "basic" | "google" | "kakao") => {
 
 const getContext = ({ theme, text }: LongBtnProps) => {
   const context = {
-    basic: <div>{text}</div>,
+    basic: <MyText>{text}</MyText>,
     google: (
       <div className="flex justify-center w-full">
         <span className="font-suitBold text-[#757575] w-full">구글로 시작하기</span>

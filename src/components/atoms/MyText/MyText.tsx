@@ -1,6 +1,6 @@
 import React from "react";
 
-type Size = "sm" | "md" | "lg";
+type Size = "xs" | "sm" | "md" | "lg";
 type Color = "main" | "pink" | "blue" | "font1" | "font2";
 type Weight = "regular" | "medium" | "semi" | "bold";
 
@@ -12,7 +12,8 @@ interface myTextProps {
 }
 
 const sizes = {
-  sm: "text-[0.5rem]",
+  xs: "text-[0.5rem]",
+  sm: "text-[0.8rem]",
   md: "text-[1.0rem]",
   lg: "text-[1.5rem]",
 };
