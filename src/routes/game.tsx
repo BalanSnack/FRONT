@@ -8,6 +8,7 @@ export default [
     children: [
       { path: "create", element: <GameCreateOrUpdatePage /> },
       { path: "update/:gameId", element: <GameCreateOrUpdatePage /> },
+      { path: ":gameId", element: <GamePage /> },
     ],
   },
   {

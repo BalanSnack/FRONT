@@ -6,7 +6,7 @@ import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <div className="m-auto h-screen max-w-[640px] py-10 px-5">
+    <div className="m-auto h-screen max-w-[640px] py-10 px-5 flex">
       <RouterProvider router={router} />
     </div>
   </React.StrictMode>,

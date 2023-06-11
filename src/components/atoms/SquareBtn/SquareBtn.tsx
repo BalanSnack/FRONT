@@ -21,19 +21,19 @@ interface SquareBtnProps {
 const getStyle = ({ theme, isSelected = false }: SquareBtnProps) => {
   switch (theme) {
     case "basic":
-      return `text-main rounded-[5px] px-5 py-3`;
+      return `text-main rounded-[5px] px-5 py-3 w-fit`;
     case "round":
-      return `text-main rounded-[21px] px-5 py-3`;
+      return `text-main rounded-[21px] px-5 py-3 w-fit`;
     case "square":
-      return `text-main rounded-[5px] w-9 h-9`;
+      return `text-main rounded-[5px] px-2 aspect-square`;
     case "commentReport":
-      return `text-font2 rounded-[5px] p-3`;
+      return `text-font2 rounded-[5px] p-3 w-fit`;
     case "commentLike":
-      return `rounded-[5px] p-3 ${isSelected ? `text-pink-900` : `text-font2`}`;
+      return `rounded-[5px] p-3 w-fit ${isSelected ? `text-pink-900` : `text-font2`}`;
     case "gameReport":
-      return `rounded-[5px] p-3 text-main`;
+      return `rounded-[5px] p-3 w-fit text-main`;
     case "gameLike":
-      return `rounded-[5px] p-3 ${isSelected ? `text-pink-900` : `text-font2`}`;
+      return `rounded-[5px] p-3 w-fit ${isSelected ? `text-pink-900` : `text-font2`}`;
   }
 };
 
@@ -59,7 +59,7 @@ const getIcon = ({ theme, icon }: SquareBtnProps) => {
 export default function SquareBtn(props: SquareBtnProps) {
   return (
     <div
-      className={`flex w-fit justify-center cursor-pointer ${styles.banSelect} ${getStyle(props)} ${
+      className={`flex justify-center cursor-pointer ${styles.banSelect} ${getStyle(props)} ${
         props.isSelected ? `${styles.selectedSquareBtn}` : `${styles.squareBtn}`
       }`}
       onClick={props.clickHandler}
