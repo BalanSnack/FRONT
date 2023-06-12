@@ -1,7 +1,7 @@
 import React from "react";
 import { hostData, commentData, likeData } from "./dummyData/data";
 import GameItem from "@/components/molecules/GameItem/GameItem";
-import CommentItem from "@/components/molecules/Comment/CommentItem/CommentItem";
+import MyInfoCommentItem from "@/components/organisms/MyInfoContentTable/MyInfoCommentItem/MyInfoCommentItem";
 import Pagination from "@/components/molecules/Pagination/Pagination";
 import MyText from "@/components/atoms/MyText/MyText";
 import { useState, useEffect } from "react";
@@ -24,14 +24,7 @@ export default function MyInfoContentList({ selectedContent }: Props) {
     if (selectedContent === "host") {
       return hostData.games.map((game) => <GameItem gameData={game} />);
     } else if (selectedContent === "comment") {
-      return commentData.comments.map((comment) => (
-        <CommentItem
-          commentData={comment}
-          clickHandler={() => {
-            navigate(`/game/${comment.gameID}`);
-          }}
-        />
-      ));
+      return commentData.comments.map((comment) => <MyInfoCommentItem commentData={comment} />);
     } else if (selectedContent === "like") {
       return likeData.games.map((game) => <GameItem gameData={game} />);
     }
@@ -57,7 +50,7 @@ export default function MyInfoContentList({ selectedContent }: Props) {
           </div>
         </>
       ) : (
-        <div className="flex-1 flex items-center justify-center">
+        <div className="flex-1 mt-40 flex items-center justify-center">
           <MyText color="font2" weight="semi">
             기록이 없습니다
           </MyText>

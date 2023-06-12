@@ -8,7 +8,7 @@ const hostData: GameList = {
       title: "게임1",
       comments: [],
       likeCount: 1,
-      isLiked: true,
+      isLiked: false,
       isReported: false,
       panels: [
         {
@@ -86,7 +86,7 @@ const commentData: CommentList = {
       content: "댓글2",
       childComments: [],
       gameID: 1,
-      isLiked: true,
+      isLiked: false,
       isReported: false,
       likeCount: 10,
       reportCount: 0,

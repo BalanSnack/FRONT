@@ -1,6 +1,6 @@
 import React from "react";
 import NicknameArea from "@/components/organisms/NicknameArea/NicknameArea";
-import MyInfoContentTable from "@/components/organisms/MyInfoContentArea/MyInfoContentTable";
+import MyInfoContentTable from "@/components/organisms/MyInfoContentTable/MyInfoContentTable/MyInfoContentTable";
 import { useState } from "react";
 
 export default function MyInfoPage() {

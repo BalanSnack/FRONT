@@ -1,6 +1,6 @@
 import React from "react";
 import MyText from "@/components/atoms/MyText/MyText";
-import MyInfoContentList from "./MyInfoContentList";
+import MyInfoContentList from "../MyInfoContentList";
 import styles from "./MyInfoContentTable.module.css";
 import { useState } from "react";
 
