@@ -1,7 +1,7 @@
 import React from "react";
 import { hostData, commentData, likeData } from "./dummyData/data";
 import GameItem from "@/components/molecules/GameItem/GameItem";
-import MyInfoCommentItem from "@/components/molecules/Comment/CommentItem/MyInfoCommentItem";
+import MyInfoCommentItem from "@/components/organisms/MyInfoContentTable/MyInfoCommentItem/MyInfoCommentItem";
 import Pagination from "@/components/molecules/Pagination/Pagination";
 import MyText from "@/components/atoms/MyText/MyText";
 import { useState, useEffect } from "react";
