@@ -2,8 +2,8 @@ import React from "react";
 import styles from "./GameItem.module.css";
 import type { Game } from "@/types/game";
 import MyText from "@/components/atoms/MyText/MyText";
-import { HeartIcon } from "@heroicons/react/24/solid";
-import { ChatBubbleLeftRightIcon } from "@heroicons/react/24/outline";
+import { HeartIcon as SolidHeartIcon } from "@heroicons/react/24/solid";
+import { ChatBubbleLeftRightIcon, HeartIcon } from "@heroicons/react/24/outline";
 import { useNavigate } from "react-router-dom";
 
 interface Props {
@@ -28,7 +28,11 @@ export default function GameItem({ gameData }: Props) {
         </div>
         <div className={styles.countArea}>
           <div className={styles.countItem}>
-            <HeartIcon className="w-5 text-pink-900" />
+            {gameData.isLiked ? (
+              <SolidHeartIcon className="w-5 text-pink-900" />
+            ) : (
+              <HeartIcon className="w-5 text-main" />
+            )}
             <MyText size="sm">{gameData.likeCount}</MyText>
           </div>
           <div className={styles.countItem}>
@@ -38,9 +42,7 @@ export default function GameItem({ gameData }: Props) {
         </div>
       </div>
       <div>
-        <MyText weight="semi" color="font1">
-          {gameData.title}
-        </MyText>
+        <MyText color="font1">{gameData.title}</MyText>
       </div>
     </div>
   );

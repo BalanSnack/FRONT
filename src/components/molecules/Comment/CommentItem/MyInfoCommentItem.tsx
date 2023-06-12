@@ -1,22 +1,24 @@
 import React from "react";
-import styles from "./CommentItem.module.css";
+import styles from "./MyInfoCommentItem.module.css";
 import type { Comment } from "@/types/comment";
 import MyText from "@/components/atoms/MyText/MyText";
-import { HeartIcon } from "@heroicons/react/24/solid";
-import { ChatBubbleLeftRightIcon } from "@heroicons/react/24/outline";
+import { HeartIcon as SolidHeartIcon } from "@heroicons/react/24/solid";
+import { ChatBubbleLeftRightIcon, HeartIcon } from "@heroicons/react/24/outline";
+import { useNavigate } from "react-router-dom";
 
 interface Props {
   commentData: Comment;
-  isSelected?: boolean;
-  clickHandler?: () => void;
 }
 
-export default function CommentItem({ commentData, isSelected = false, clickHandler }: Props) {
+export default function CommentItem({ commentData }: Props) {
+  const navigate = useNavigate();
+
+  const clickItemHandler = () => {
+    navigate(`/game/${commentData.gameID}`);
+  };
+
   return (
-    <div
-      className={`${styles.itemBox} ${isSelected && styles.selectedItemBox}`}
-      onClick={clickHandler}
-    >
+    <div className={styles.itemBox} onClick={clickItemHandler}>
       <div className={styles.topArea}>
         <div className="flex items-end gap-2">
           <MyText weight="medium">{commentData.author.nickname}</MyText>
@@ -26,7 +28,11 @@ export default function CommentItem({ commentData, isSelected = false, clickHand
         </div>
         <div className={styles.countArea}>
           <div className={styles.countItem}>
-            <HeartIcon className="w-5 text-pink-900" />
+            {commentData.isLiked ? (
+              <SolidHeartIcon className="w-5 text-pink-900" />
+            ) : (
+              <HeartIcon className="w-5 text-main" />
+            )}
             <MyText size="sm">{commentData.likeCount}</MyText>
           </div>
           <div className={styles.countItem}>
@@ -36,9 +42,7 @@ export default function CommentItem({ commentData, isSelected = false, clickHand
         </div>
       </div>
       <div>
-        <MyText weight="semi" color="font1">
-          {commentData.content}
-        </MyText>
+        <MyText color="font1">{commentData.content}</MyText>
       </div>
     </div>
   );

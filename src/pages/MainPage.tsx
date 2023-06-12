@@ -12,7 +12,7 @@ export default function MainPage() {
   };
 
   return (
-    <div className="flex h-full justify-between items-center flex-col">
+    <div className="flex-1 flex h-full justify-between items-center flex-col">
       <h1 className="flex">밸런스낵</h1>
       <div className="flex w-full flex-col gap-3">
         <MainCardBtn theme="popular" />
