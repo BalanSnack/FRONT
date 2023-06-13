@@ -5,7 +5,7 @@ import styles from "./LongBtn.module.css";
 interface LongBtnProps {
   theme: "basic" | "google" | "kakao";
   isSelected?: boolean;
-  text: string;
+  text?: string;
 }
 
 const getStyle = ({ theme, isSelected }: LongBtnProps) => {
@@ -31,7 +31,7 @@ const getContext = ({ theme, text }: LongBtnProps) => {
     basic: <MyText>{text}</MyText>,
     google: (
       <div className="flex justify-center w-full">
-        <span className="font-suitBold text-[#757575] w-full">구글로 시작하기</span>
+        <span className="font-suitBold text-[#757575]">구글로 시작하기</span>
       </div>
     ),
     kakao: (

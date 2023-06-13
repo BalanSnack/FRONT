@@ -1,6 +1,7 @@
 import React from "react";
 import MainCardBtn from "@/components/organisms/MainCardBtn/MainCardBtn";
 import MyText from "@/components/atoms/MyText/MyText";
+import MyLogo from "@/components/atoms/MyLogo";
 import LoginModal from "@/components/organisms/LoginModal/LoginModal";
 import { useState } from "react";
 
@@ -13,8 +14,10 @@ export default function MainPage() {
 
   return (
     <div className="flex-1 flex h-full justify-between items-center flex-col">
-      <h1 className="flex">밸런스낵</h1>
-      <div className="flex w-full flex-col gap-3">
+      <div className="h-1/5 flex items-center">
+        <MyLogo />
+      </div>
+      <div className="flex w-full flex-col gap-3 mb-36">
         <MainCardBtn theme="popular" />
         <div className="flex gap-3">
           <MainCardBtn theme="new" />

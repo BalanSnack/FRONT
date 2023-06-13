@@ -14,7 +14,7 @@ export default function LoginModal({ isOpen, closeModal }: Props) {
       <MyText size="lg" weight="semi" color="font1">
         로그인
       </MyText>
-      <div className="flex flex-col gap-3 my-10">
+      <div className="flex flex-col gap-3 my-10 w-full">
         <LongBtn theme="google" />
         <LongBtn theme="kakao" />
       </div>
