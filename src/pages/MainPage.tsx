@@ -2,7 +2,7 @@ import React from "react";
 import MainCardBtn from "@/components/organisms/MainCardBtn/MainCardBtn";
 import MyText from "@/components/atoms/MyText/MyText";
 import MyLogo from "@/components/atoms/MyLogo";
-import LoginModal from "@/components/organisms/LoginModal/LoginModal";
+import LoginModal from "@/components/molecules/LoginModal/LoginModal";
 import { useState } from "react";
 
 export default function MainPage() {
