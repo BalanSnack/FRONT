@@ -1,10 +1,10 @@
 import React from "react";
 
 interface LogoProps {
-  size: "sm" | "lg";
+  size?: "sm" | "lg";
 }
 
-const getLogo = ({ size }: LogoProps) => {
+const getLogo = ({ size = "lg" }: LogoProps) => {
   switch (size) {
     case "sm":
       return <img src="src/assets/BalanSnack_logo_s.png" />;
