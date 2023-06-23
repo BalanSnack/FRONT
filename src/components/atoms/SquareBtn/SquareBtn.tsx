@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./SquareBtn.module.css";
 
 import { HeartIcon } from "@heroicons/react/24/solid";
+import MyText from "../MyText/MyText";
 import {
   ExclamationCircleIcon,
   ChevronLeftIcon,
@@ -70,7 +71,7 @@ export default function SquareBtn(props: SquareBtnProps) {
         }`}
       >
         <div>{getIcon(props)}</div>
-        <span>{props.text}</span>
+        <MyText weight="semi">{props.text}</MyText>
       </div>
     </div>
   );
