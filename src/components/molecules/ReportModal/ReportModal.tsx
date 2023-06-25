@@ -8,9 +8,11 @@ import SquareBtn from "@/components/atoms/SquareBtn/SquareBtn";
 interface Props {
   isOpen: boolean;
   closeModal: () => void;
+  nickname: string;
+  detail: string;
 }
 
-export default function ReportModal({ isOpen, closeModal }: Props) {
+export default function ReportModal({ isOpen, closeModal, nickname, detail }: Props) {
   const [reason, setReason] = React.useState<string>("");
   const reasonClickHandler = (val: "content" | "abuse") => {
     setReason(val);
@@ -36,20 +38,20 @@ export default function ReportModal({ isOpen, closeModal }: Props) {
           </MyText>
         </div>
         <div className={styles.nicknameBox}>
-          <MyText weight="semi">신고할 유저 닉네임</MyText>
+          <MyText weight="semi">{nickname}</MyText>
           <MyText size="sm" color="font1">
-            신고할 댓글 내용
+            {detail}
           </MyText>
         </div>
         <div className="flex flex-col gap-3">
-          <MyText>신고 사유</MyText>
+          <MyText weight="bold">신고 사유</MyText>
           <div
             className={`${styles.reasonBox} ${reason == "content" && styles.selectedReasonBox}`}
             onClick={() => reasonClickHandler("content")}
           >
             <MyText weight="semi">부적합한 주제</MyText>
             <MyText size="sm" color="font1">
-              다른 사용자에게 불괘감을 주거나 논란을 야기할 수 있는 내용
+              다른 사용자에게 불쾌감을 주거나 논란을 야기할 수 있는 내용
             </MyText>
           </div>
           <div
@@ -58,7 +60,7 @@ export default function ReportModal({ isOpen, closeModal }: Props) {
           >
             <MyText weight="semi">욕설 및 비방</MyText>
             <MyText size="sm" color="font1">
-              다른 사용자에게 불괘감을 주거나 논란을 야기할 수 있는 내용
+              다른 사용자에게 욕설이나 비방을 하는 내용
             </MyText>
           </div>
         </div>
