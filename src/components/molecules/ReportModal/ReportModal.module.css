@@ -1,0 +1,13 @@
+.nicknameBox {
+  @apply flex flex-col gap-1 rounded-lg p-3;
+  @apply bg-sky-100 shadow-square;
+}
+
+.reasonBox {
+  @apply flex flex-col gap-1 rounded-lg p-3;
+  @apply shadow-square cursor-pointer;
+}
+
+.selectedReasonBox {
+  @apply shadow-selectedSquare;
+}
