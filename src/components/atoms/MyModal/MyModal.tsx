@@ -22,7 +22,7 @@ export default function MyModal({ isOpen, closeModal, children }: Props) {
 
   return ReactDOM.createPortal(
     <div className={styles.modalOverlay} onClick={handleOverlayClick} data-testid="modalOverlay">
-      <div className="bg-back rounded-lg p-5 min-w-[250px] max-w-sm">
+      <div className="bg-back rounded-lg p-5 min-w-[250px] max-w-[90vw]">
         <div className="flex justify-end mb-3">
           <XMarkIcon
             className="w-6 h-6 cursor-pointer"
