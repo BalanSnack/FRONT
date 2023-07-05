@@ -1,7 +1,7 @@
 import React from "react";
 
 type Size = "xs" | "sm" | "md" | "lg" | "xl";
-type Color = "main" | "pink" | "blue" | "font1" | "font2" | "back";
+type Color = "main" | "pink" | "blue" | "font1" | "font2" | "white";
 type Weight = "regular" | "medium" | "semi" | "bold";
 
 interface myTextProps {
@@ -25,7 +25,7 @@ const fontColor = {
   blue: "text-sky-900",
   font1: "text-font1",
   font2: "text-font2",
-  back: "text-back",
+  white: "text-back",
 };
 
 const fontWeight = {

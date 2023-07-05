@@ -45,7 +45,7 @@ export default function NavItem({ navItem, isCurrentPage }: Props) {
       }`}
     >
       {getIcon()}
-      <MyText size="sm" color={isCurrentPage ? "back" : "font2"}>
+      <MyText size="sm" color={isCurrentPage ? "white" : "font2"}>
         {navItem.label}
       </MyText>
     </Link>

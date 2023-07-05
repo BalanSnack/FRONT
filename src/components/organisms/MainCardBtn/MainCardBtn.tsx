@@ -41,7 +41,7 @@ export default function MainCardBtn({ theme }: Props) {
       role="mainCardBtn"
     >
       <img src={`src/assets/images/${theme}_card.png`} />
-      <MyText size={theme === "popular" ? "lg" : "md"} weight="medium">
+      <MyText size={theme === "popular" ? "xl" : "md"} weight="medium">
         {themeMsg[theme]}
       </MyText>
     </div>
