@@ -22,9 +22,11 @@ export default function MyInfoContentList({ selectedContent }: Props) {
 
   const getData = (selectedContent: Props["selectedContent"]) => {
     if (selectedContent === "host") {
-      return hostData.games.map((game) => <GameItem gameData={game} />);
+      return hostData.games.map((game) => <GameItem key={game.gameID} gameData={game} />);
     } else if (selectedContent === "comment") {
-      return commentData.comments.map((comment) => <MyInfoCommentItem commentData={comment} />);
+      return commentData.comments.map((comment) => (
+        <MyInfoCommentItem key={comment.commentID} commentData={comment} />
+      ));
     } else if (selectedContent === "like") {
       return likeData.games.map((game) => <GameItem gameData={game} />);
     }

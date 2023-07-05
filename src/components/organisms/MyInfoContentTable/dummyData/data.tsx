@@ -32,7 +32,7 @@ const hostData: GameList = {
       createdAt: "2021-10-10 10:10:10",
     },
     {
-      gameID: 1,
+      gameID: 2,
       title: "게임2",
       comments: [],
       likeCount: 1,
@@ -82,7 +82,7 @@ const commentData: CommentList = {
       },
     },
     {
-      commentID: 1,
+      commentID: 2,
       content: "댓글2",
       childComments: [],
       gameID: 1,
@@ -98,7 +98,7 @@ const commentData: CommentList = {
       },
     },
     {
-      commentID: 1,
+      commentID: 3,
       content: "댓글3",
       childComments: [],
       gameID: 1,

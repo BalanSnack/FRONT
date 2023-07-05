@@ -1,0 +1,20 @@
+.navItem {
+  @apply flex flex-col cursor-pointer items-center justify-center w-full;
+}
+
+.inactiveNavItem {
+  @apply text-font2;
+}
+
+.inactiveNavItem:hover {
+  @apply text-main;
+}
+
+.activeNavItem {
+  @apply w-auto aspect-square rounded-[100%];
+  @apply bg-main text-back relative top-2 shadow-square;
+}
+
+.activeNavItem:hover {
+  @apply text-back;
+}
