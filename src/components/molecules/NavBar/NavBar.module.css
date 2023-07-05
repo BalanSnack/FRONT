@@ -1,0 +1,21 @@
+.navContainer {
+  @apply flex relative w-full items-center h-16;
+}
+
+.inactiveNavWrapper {
+  @apply rounded-[100%] w-8 h-8 shadow-round p-1;
+  @apply flex;
+}
+
+.activeNavWrapper {
+  @apply w-full shadow-square rounded-lg;
+  transition: width 0.5s ease-out;
+}
+
+.navButton {
+  @apply w-8 text-font2 cursor-pointer;
+}
+
+.navItemsWrapper {
+  @apply flex justify-center h-16;
+}
