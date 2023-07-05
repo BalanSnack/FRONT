@@ -14,24 +14,24 @@ import {
 
 interface Props {
   navItem: NavItemType;
-  isActive: boolean;
+  isCurrentPage: boolean;
 }
 
-export default function NavItem({ navItem, isActive }: Props) {
+export default function NavItem({ navItem, isCurrentPage }: Props) {
   const getIcon = () => {
     switch (navItem.label) {
       case "인기":
-        return <FireIcon className={isActive ? "w-7" : "w-6"} />;
+        return <FireIcon className={isCurrentPage ? "w-7" : "w-6"} />;
       case "신규":
-        return <LightBulbIcon className={isActive ? "w-7" : "w-6"} />;
+        return <LightBulbIcon className={isCurrentPage ? "w-7" : "w-6"} />;
       case "랜덤":
-        return <ArrowPathIcon className={isActive ? "w-7" : "w-6"} />;
+        return <ArrowPathIcon className={isCurrentPage ? "w-7" : "w-6"} />;
       case "카테고리":
-        return <RectangleGroupIcon className={isActive ? "w-7" : "w-6"} />;
-      case "내정보":
-        return <UserCircleIcon className={isActive ? "w-7" : "w-6"} />;
+        return <RectangleGroupIcon className={isCurrentPage ? "w-7" : "w-6"} />;
+      case "내 정보":
+        return <UserCircleIcon className={isCurrentPage ? "w-7" : "w-6"} />;
       case "게임추가":
-        return <PlusIcon className={isActive ? "w-7" : "w-6"} />;
+        return <PlusIcon className={isCurrentPage ? "w-7" : "w-6"} />;
       default:
         return null;
     }
@@ -40,10 +40,12 @@ export default function NavItem({ navItem, isActive }: Props) {
   return (
     <Link
       to={navItem.link}
-      className={`${styles.navItem} ${isActive ? styles.activeNavItem : styles.inactiveNavItem}`}
+      className={`${styles.navItem} ${
+        isCurrentPage ? styles.activeNavItem : styles.inactiveNavItem
+      }`}
     >
       {getIcon()}
-      <MyText size="sm" color={isActive ? "back" : "font2"}>
+      <MyText size="sm" color={isCurrentPage ? "back" : "font2"}>
         {navItem.label}
       </MyText>
     </Link>

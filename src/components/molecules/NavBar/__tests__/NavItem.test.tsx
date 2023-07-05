@@ -14,7 +14,7 @@ describe("NavItem", () => {
   it("renders NavItem", () => {
     render(
       <BrowserRouter>
-        <NavItem navItem={mockNavItem} isActive={false} />
+        <NavItem navItem={mockNavItem} isCurrentPage={false} />
       </BrowserRouter>,
     );
     expect(screen.getByText("인기")).toBeInTheDocument();
@@ -23,7 +23,7 @@ describe("NavItem", () => {
   it("renders NavItem with active", () => {
     render(
       <BrowserRouter>
-        <NavItem navItem={mockNavItem} isActive={true} />
+        <NavItem navItem={mockNavItem} isCurrentPage={true} />
       </BrowserRouter>,
     );
 
@@ -34,7 +34,7 @@ describe("NavItem", () => {
   it("renders NavItem with inactive", () => {
     render(
       <BrowserRouter>
-        <NavItem navItem={mockNavItem} isActive={false} />
+        <NavItem navItem={mockNavItem} isCurrentPage={false} />
       </BrowserRouter>,
     );
 
@@ -45,7 +45,7 @@ describe("NavItem", () => {
   it("has correct link", () => {
     render(
       <BrowserRouter>
-        <NavItem navItem={mockNavItem} isActive={false} />
+        <NavItem navItem={mockNavItem} isCurrentPage={false} />
       </BrowserRouter>,
     );
 

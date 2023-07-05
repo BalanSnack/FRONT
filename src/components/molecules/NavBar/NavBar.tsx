@@ -45,7 +45,7 @@ export default function NavBar({ isActive, activeHandler }: Props) {
       link: "/category",
     },
     myInfo: {
-      label: "내정보",
+      label: "내 정보",
       link: "/myInfo",
     },
     create: {
@@ -70,7 +70,7 @@ export default function NavBar({ isActive, activeHandler }: Props) {
         )}
         <div className={`${styles.navItemsWrapper} ${!isActive && "hidden"}`}>
           {Object.entries(navItems).map(([key, navItem]) => {
-            return <NavItem key={key} navItem={navItem} isActive={nowPage == key} />;
+            return <NavItem key={key} navItem={navItem} isCurrentPage={nowPage == key} />;
           })}
         </div>
       </div>

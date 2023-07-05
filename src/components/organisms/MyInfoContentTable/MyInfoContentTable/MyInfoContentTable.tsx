@@ -28,7 +28,9 @@ export default function MyInfoContentTable() {
       className={`${styles.contentBtn} ${content === selectedContent && styles.selectedContentBtn}`}
       key={content}
     >
-      <MyText weight="medium">{text}</MyText>
+      <MyText weight="medium" size="sm">
+        {text}
+      </MyText>
     </div>
   ));
 
