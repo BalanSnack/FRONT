@@ -9,18 +9,18 @@ const gameData: Game = {
   isReported: false,
   panels: [
     {
-      image: "./hamster_color.svg",
+      image: "/src/pages/gameDummyData/hamster_color.svg",
       title: "집안 다 부수는 햄스터",
       isSelected: false,
       selectedCount: 15,
-      position: "left",
+      location: "left",
     },
     {
-      image: "./bug_color.svg",
+      image: "/src/pages/gameDummyData/bug_color.svg",
       title: "점잖은 바퀴벌레",
       isSelected: false,
       selectedCount: 7,
-      position: "right",
+      location: "right",
     },
   ],
   isVoted: false,

@@ -4,25 +4,24 @@ import GameCardBtn from "@/components/organisms/GameCardBtn/GameCardBtn";
 import MyText from "@/components/atoms/MyText/MyText";
 
 import { gameData } from "./gameDummyData/data";
-import Panel from "@/types/panel";
 
 export default function GamePage() {
   return (
-    <div>
-      <div className="top">
-        <MyLogo size="sm" />
-      </div>
-      <div className="game-main flex justify-center my-5">
-        <MyText size="md" color="font1" weight="semi">
+    <div className="w-full h-full">
+      <MyLogo size="sm" className="pb-5" />
+      <div className="game-main h-1/4">
+        <MyText
+          size="lg"
+          color="font1"
+          weight="semi"
+          className="flex justify-center items-center pb-3"
+        >
           {gameData.title}
         </MyText>
-        <div>
-          {gameData.panels.map(
-            (panel) => {
-              return <GameCardBtn panel={panel} />;
-            },
-            // console.log(typeof panel),
-          )}
+        <div className="flex gap-5 h-full">
+          {gameData.panels.map((panel) => {
+            return <GameCardBtn props={panel} key={panel.location} />;
+          })}
         </div>
       </div>
     </div>

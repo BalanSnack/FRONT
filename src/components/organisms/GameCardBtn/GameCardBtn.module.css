@@ -1,0 +1,12 @@
+.cardBtn {
+  @apply cursor-pointer rounded-md shadow-card w-full h-full flex flex-col justify-center items-center;
+}
+
+.cardBtn:hover {
+  box-shadow: -0.18px -0.18px 3.54px #ffffff, 0.18px 0.18px 3.54px rgba(174, 174, 192, 0.4);
+}
+
+.cardBtn:active,
+.cardBtn:focus {
+  @apply shadow-selectedCard;
+}
