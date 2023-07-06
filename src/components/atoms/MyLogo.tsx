@@ -2,9 +2,10 @@ import React from "react";
 
 interface LogoProps {
   size?: "sm" | "lg";
+  className?: string;
 }
 
-const getLogo = ({ size = "lg" }: LogoProps) => {
+const getLogo = (size: "sm" | "lg") => {
   switch (size) {
     case "sm":
       return <img src="/src/assets/BalanSnack_logo_s.png" />;
@@ -13,6 +14,6 @@ const getLogo = ({ size = "lg" }: LogoProps) => {
   }
 };
 
-export default function MyLogo(props: LogoProps) {
-  return <div>{getLogo(props)}</div>;
+export default function MyLogo({ size = "sm", className }: LogoProps) {
+  return <div className={`${className}`}>{getLogo(size)}</div>;
 }
