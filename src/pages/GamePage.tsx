@@ -1,13 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import MyLogo from "@/components/atoms/MyLogo";
 import GameCardBtn from "@/components/organisms/GameCardBtn/GameCardBtn";
 import MyText from "@/components/atoms/MyText/MyText";
 import SquareBtn from "@/components/atoms/SquareBtn/SquareBtn";
+import CommentTable from "@/components/molecules/Comment/CommentTable";
 
 import { gameData } from "./gameDummyData/data";
-import game from "@/routes/game";
 
 export default function GamePage() {
+  const [commentsSelected, setCommentsSelected] = useState(false);
+  const [gameReport, setGameReport] = useState(false);
+  const [gameLike, setGameLike] = useState(false);
+
+  const commentsBtnHandler = () => {
+    setCommentsSelected(!commentsSelected);
+  };
+  const gameReportHandler = () => {
+    setGameReport(!gameReport);
+  };
+  const gameLikeHandler = () => {
+    setGameLike(!gameLike);
+  };
+
   return (
     <div className="w-full h-full">
       <MyLogo size="sm" className="pb-5" />
@@ -26,13 +40,30 @@ export default function GamePage() {
           })}
         </div>
       </div>
-      <div className="btn-group flex justify-between py-5">
-        <SquareBtn theme="round" text={`${gameData.comments.length}`} icon="comment" />
+      <div className="btn-group flex justify-between pt-5 pb-3">
+        <SquareBtn
+          theme="round"
+          text={`${gameData.comments.length}`}
+          icon="comment"
+          isSelected={commentsSelected}
+          clickHandler={commentsBtnHandler}
+        />
         <div className="btn-right flex gap-3">
-          <SquareBtn theme="gameReport" icon="report" />
-          <SquareBtn theme="gameLike" icon="heart" isSelected={gameData.isLiked} />
+          <SquareBtn
+            theme="gameReport"
+            icon="report"
+            isSelected={gameReport}
+            clickHandler={gameReportHandler}
+          />
+          <SquareBtn
+            theme="gameLike"
+            icon="heart"
+            isSelected={gameLike}
+            clickHandler={gameLikeHandler}
+          />
         </div>
       </div>
+      {commentsSelected ? <CommentTable comments={gameData.comments} /> : <></>}
     </div>
   );
 }
