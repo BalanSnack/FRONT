@@ -4,7 +4,7 @@ module.exports = {
   moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
   moduleNameMapper: {
     "^@/(.*)$": "<rootDir>/src/$1",
-    "\\.(css)$": "<rootDir>/__mocks__/styleMock.js",
+    "\\.(css|less)$": "identity-obj-proxy",
   },
   testMatch: ["**/__tests__/**/*.test.(ts|tsx|js|jsx)"],
   transform: {
