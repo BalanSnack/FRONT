@@ -67,7 +67,7 @@ export default function NavBar({ isActive, activeHandler }: Props) {
         role="nav"
       >
         {!isActive && (
-          <div className={styles.navButton} onClick={activeHandler}>
+          <div className={styles.navButton} onClick={activeHandler} role="navButton">
             <Bars3Icon />
           </div>
         )}
