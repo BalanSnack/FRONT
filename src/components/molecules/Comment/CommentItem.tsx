@@ -1,15 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./CommentItem.module.css";
 import type { Comment } from "@/types/comment";
 import MyText from "@/components/atoms/MyText/MyText";
 import { HeartIcon as SolidHeartIcon } from "@heroicons/react/24/solid";
-import { ChatBubbleLeftRightIcon, HeartIcon } from "@heroicons/react/24/outline";
+import { ExclamationCircleIcon, HeartIcon } from "@heroicons/react/24/outline";
 
 interface CommentItemProps {
   commentData: Comment;
 }
 
 export default function CommentItem({ commentData }: CommentItemProps) {
+  const [commentIsLiked, setCommentIsLiked] = useState(commentData.isLiked);
+  const [commentLikeCnt, setCommentLikeCnt] = useState(commentData.likeCount);
+
+  const commentLikeHandler = () => {
+    if (commentIsLiked) {
+      setCommentIsLiked(!commentIsLiked);
+      setCommentLikeCnt(commentLikeCnt - 1);
+    } else {
+      setCommentIsLiked(!commentIsLiked);
+      setCommentLikeCnt(commentLikeCnt + 1);
+    }
+  };
+
   return (
     <div className={styles.itemBox}>
       <div className={styles.topArea}>
@@ -20,18 +33,18 @@ export default function CommentItem({ commentData }: CommentItemProps) {
           </MyText>
         </div>
         <div className={styles.countArea}>
-          <div className={styles.countItem}>
-            {commentData.isLiked ? (
+          <div className={styles.countItem} onClick={commentLikeHandler}>
+            {commentIsLiked ? (
               <SolidHeartIcon className="w-5 text-pink-900" />
             ) : (
               <HeartIcon className="w-5 text-main" />
             )}
-            <MyText size="sm">{commentData.likeCount}</MyText>
+            <MyText size="sm">{commentLikeCnt}</MyText>
           </div>
-          <div className={styles.countItem}>
-            <ChatBubbleLeftRightIcon className="w-5 text-main" />
-            <MyText size="sm">{commentData.childComments.length}</MyText>
-          </div>
+          {/* <div className={styles.countItem}>
+            <ExclamationCircleIcon className="w-5 text-main" />
+            <MyText size="sm">신고</MyText>
+          </div> */}
         </div>
       </div>
       <div>

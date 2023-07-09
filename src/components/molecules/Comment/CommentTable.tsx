@@ -1,6 +1,6 @@
 import React from "react";
 import { Comment } from "@/types/comment";
-import CommentItem from "@/components/organisms/MyInfoContentTable/MyInfoCommentItem/MyInfoCommentItem";
+import CommentItem from "./CommentItem";
 
 interface CommentTableProps {
   comments: Comment[];
