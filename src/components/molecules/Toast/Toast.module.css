@@ -1,0 +1,8 @@
+.toastOverlay {
+  @apply flex w-full justify-center fixed top-10 z-10;
+}
+
+.toastWrap {
+  @apply flex gap-2;
+  @apply shadow-md rounded-md px-3 py-2 min-w-[250px] max-w-[90vw];
+}

@@ -18,6 +18,16 @@ module.exports = {
       selected: "#D7E1F1",
       font1: "#333333",
       font2: "#B7BBCB",
+      red: {
+        200: "#fecdd3",
+        300: "#fda4af",
+        400: "#fb7185",
+      },
+      green: {
+        200: "#a7f3d0",
+        300: "#6ee7b7",
+        400: "#34d399",
+      },
     },
     fontFamily: {
       suitRegular: ["SUIT-Regular", "sans-serif"],
