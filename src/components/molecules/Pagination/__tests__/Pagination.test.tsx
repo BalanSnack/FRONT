@@ -7,7 +7,7 @@ describe("Pagination", () => {
   const mockPageHandler = jest.fn();
 
   const props = {
-    fullPage: 10,
+    totalPage: 10,
     page: 3,
     pageHandler: mockPageHandler(),
   };

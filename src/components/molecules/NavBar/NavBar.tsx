@@ -62,9 +62,12 @@ export default function NavBar({ isActive, activeHandler }: Props) {
   return (
     <div className={`${styles.navContainer} ${isActive ? "justify-end" : "justify-between"}`}>
       {!isActive && <MyLogo size="sm" />}
-      <div className={isActive ? styles.activeNavWrapper : styles.inactiveNavWrapper}>
+      <div
+        className={`${isActive ? styles.activeNavWrapper : styles.inactiveNavWrapper}`}
+        role="nav"
+      >
         {!isActive && (
-          <div className={styles.navButton} onClick={activeHandler}>
+          <div className={styles.navButton} onClick={activeHandler} role="navButton">
             <Bars3Icon />
           </div>
         )}

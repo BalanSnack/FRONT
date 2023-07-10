@@ -11,7 +11,7 @@ const mockNavItem: NavItemType = {
 };
 
 describe("NavItem", () => {
-  it("renders NavItem", () => {
+  it("renders collectly", () => {
     render(
       <BrowserRouter>
         <NavItem navItem={mockNavItem} isCurrentPage={false} />
@@ -28,7 +28,7 @@ describe("NavItem", () => {
     );
 
     const navItemElement = screen.getByRole("link");
-    navItemElement.classList.contains(styles.activeNavItem);
+    expect(navItemElement.classList.contains(styles.activeNavItem)).toBeTruthy();
   });
 
   it("renders NavItem with inactive", () => {
@@ -39,7 +39,7 @@ describe("NavItem", () => {
     );
 
     const navItemElement = screen.getByRole("link");
-    navItemElement.classList.contains(styles.inactiveNavItem);
+    expect(navItemElement.classList.contains(styles.inactiveNavItem)).toBeTruthy();
   });
 
   it("has correct link", () => {
