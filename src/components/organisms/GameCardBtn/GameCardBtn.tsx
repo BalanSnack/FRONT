@@ -12,9 +12,9 @@ interface gameCardBtnProps {
 const getBgColor = (location: string) => {
   switch (location) {
     case "left":
-      return `bg-pink-500`;
+      return `bg-pink-500 ${styles.pinkCardBtn}`;
     case "right":
-      return `bg-sky-500`;
+      return `bg-sky-500 ${styles.blueCardBtn}`;
   }
 };
 
