@@ -9,13 +9,14 @@ interface myTextProps {
   size?: Size;
   color?: Color;
   weight?: Weight;
+  className?: string;
 }
 
 const sizes = {
   xs: "text-[0.5rem]",
   sm: "text-[0.8rem]",
   md: "text-[1.0rem]",
-  lg: "text-[1.5rem]",
+  lg: "text-[1.3rem]",
   xl: "text-[2.0rem]",
 };
 
@@ -44,6 +45,7 @@ export default function MyText({
   size = "md",
   color = "main",
   weight = "regular",
+  className,
 }: myTextProps) {
-  return <span className={getFontStyle(size, color, weight)}>{children}</span>;
+  return <span className={`${getFontStyle(size, color, weight)} ${className}`}>{children}</span>;
 }

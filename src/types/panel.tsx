@@ -3,4 +3,5 @@ export default interface Panel {
   title: string;
   isSelected: boolean;
   selectedCount: number;
+  location: string;
 }
