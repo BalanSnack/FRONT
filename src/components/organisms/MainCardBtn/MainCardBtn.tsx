@@ -11,10 +11,10 @@ interface Props {
 
 const getStyle = (theme: Theme) => {
   const themeStyle = {
-    popular: "bg-gradient-to-r from-pink-500 to-sky-500 flex-row-reverse aspect-[4/2]",
-    new: "bg-pink-500 flex-col aspect-[5/3]",
-    random: "bg-[#DBCCDD] flex-col aspect-[5/3]",
-    category: "bg-sky-500 flex-col aspect-[5/3]",
+    popular: `bg-gradient-to-r from-pink-500 to-sky-500 flex-row-reverse aspect-[4/2] ${styles.popularCardBtn}`,
+    new: `bg-pink-500 flex-col aspect-[5/3] ${styles.newCardBtn}`,
+    random: `bg-[#DBCCDD] flex-col aspect-[5/3] ${styles.randomCardBtn}`,
+    category: `bg-sky-500 flex-col aspect-[5/3] ${styles.categoryCardBtn}`,
   };
 
   return `${themeStyle[theme]} ${styles.cardBtn}`;
