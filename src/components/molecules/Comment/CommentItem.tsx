@@ -37,11 +37,11 @@ export default function CommentItem({ commentData }: CommentItemProps) {
         <div className={styles.countArea}>
           <div className={styles.countItem} onClick={commentLikeHandler}>
             {commentIsLiked ? (
-              <SolidHeartIcon className="w-5 text-pink-900" />
+              <SolidHeartIcon className="w-4 text-pink-900" />
             ) : (
-              <HeartIcon className="w-5 text-main" />
+              <HeartIcon className="w-4 text-main" />
             )}
-            <MyText size="sm">{commentLikeCnt}</MyText>
+            <MyText size="xs">{commentLikeCnt}</MyText>
           </div>
           {/* <div className={styles.countItem}>
             <ExclamationCircleIcon className="w-5 text-main" />

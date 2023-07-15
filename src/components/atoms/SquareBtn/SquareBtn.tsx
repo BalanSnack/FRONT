@@ -22,9 +22,9 @@ interface SquareBtnProps {
 const getStyle = ({ theme, isSelected = false }: SquareBtnProps) => {
   switch (theme) {
     case "basic":
-      return `text-main rounded-[5px] px-5 py-3 w-fit`;
+      return `text-main rounded-[5px] px-3 py-1 w-fit`;
     case "round":
-      return `text-main rounded-[21px] px-5 py-3 w-fit`;
+      return `text-main rounded-[21px] px-3 w-fit`;
     case "square":
       return `text-main rounded-[5px] px-2 aspect-square`;
     case "commentReport":
@@ -32,21 +32,21 @@ const getStyle = ({ theme, isSelected = false }: SquareBtnProps) => {
     case "commentLike":
       return `rounded-[5px] p-3 w-fit ${isSelected ? `text-pink-900` : `text-font2`}`;
     case "gameReport":
-      return `rounded-[5px] p-3 w-fit text-main`;
+      return `rounded-[5px] p-2 w-fit text-main`;
     case "gameLike":
-      return `rounded-[5px] p-3 w-fit ${isSelected ? `text-pink-900` : `text-font2`}`;
+      return `rounded-[5px] p-2 w-fit ${isSelected ? `text-pink-900` : `text-font2`}`;
   }
 };
 
 const getIcon = ({ theme, icon }: SquareBtnProps) => {
   if (icon === "comment") {
-    return <ChatBubbleBottomCenterTextIcon className="w-7 h-7 pr-2" />;
+    return <ChatBubbleBottomCenterTextIcon className="w-6 h-6 pr-2" />;
   } else if (icon === "report") {
-    return <ExclamationCircleIcon className="w-6 h-6" />;
+    return <ExclamationCircleIcon className="w-5 h-5" />;
   } else if (icon === "heart") {
     switch (theme) {
       case "gameLike":
-        return <HeartIcon className="w-6 h-6" />;
+        return <HeartIcon className="w-5 h-5" />;
       case "commentLike":
         return <HeartIcon className="w-7 h-7" />;
     }
@@ -71,7 +71,9 @@ export default function SquareBtn(props: SquareBtnProps) {
         }`}
       >
         <div>{getIcon(props)}</div>
-        <MyText weight="semi">{props.text}</MyText>
+        <MyText weight="semi" size="sm">
+          {props.text}
+        </MyText>
       </div>
     </div>
   );
