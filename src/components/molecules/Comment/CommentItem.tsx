@@ -27,8 +27,10 @@ export default function CommentItem({ commentData }: CommentItemProps) {
     <div className={styles.itemBox}>
       <div className={styles.topArea}>
         <div className="flex items-end gap-2">
-          <MyText weight="medium">{commentData.author.nickname}</MyText>
-          <MyText color="font2" size="sm">
+          <MyText size="sm" weight="medium">
+            {commentData.author.nickname}
+          </MyText>
+          <MyText color="font2" size="xs">
             {commentData.createdAt}
           </MyText>
         </div>
@@ -48,7 +50,9 @@ export default function CommentItem({ commentData }: CommentItemProps) {
         </div>
       </div>
       <div>
-        <MyText color="font1">{commentData.content}</MyText>
+        <MyText size="sm" color="font1">
+          {commentData.content}
+        </MyText>
       </div>
     </div>
   );
