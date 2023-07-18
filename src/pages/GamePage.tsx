@@ -8,10 +8,14 @@ import CommentTable from "@/components/molecules/Comment/CommentTable";
 import { gameData } from "./gameDummyData/data";
 
 export default function GamePage() {
+  const [panelSelected, setPanelSelected] = useState(false);
   const [commentsSelected, setCommentsSelected] = useState(false);
   const [gameReport, setGameReport] = useState(false);
   const [gameLike, setGameLike] = useState(false);
 
+  const panelBtnHandler = () => {
+    setPanelSelected(!panelSelected);
+  };
   const commentsBtnHandler = () => {
     setCommentsSelected(!commentsSelected);
   };
@@ -36,7 +40,14 @@ export default function GamePage() {
         </MyText>
         <div className="flex gap-5 h-5/6">
           {gameData.panels.map((panel) => {
-            return <GameCardBtn props={panel} key={panel.location} />;
+            return (
+              <GameCardBtn
+                props={panel}
+                isSelected={panel.isSelected}
+                clickHandler={panelBtnHandler}
+                key={panel.location}
+              />
+            );
           })}
         </div>
       </div>
