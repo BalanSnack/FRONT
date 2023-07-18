@@ -6,7 +6,7 @@ import Panel from "@/types/panel";
 
 interface gameCardBtnProps {
   props: Panel;
-  isSelected?: boolean;
+  isSelected: boolean;
   clickHandler?: () => void;
 }
 
@@ -28,7 +28,7 @@ const getTextColor = (location: string) => {
   }
 };
 
-export default function GameCardBtn({ props, isSelected = false, clickHandler }: gameCardBtnProps) {
+export default function GameCardBtn({ props, isSelected, clickHandler }: gameCardBtnProps) {
   return (
     <div
       className={`${styles.cardBtn} ${getBgColor(props.location, isSelected)}`}
