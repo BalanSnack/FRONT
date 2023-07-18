@@ -24,7 +24,7 @@ const getStyle = ({ theme, isSelected = false }: SquareBtnProps) => {
     case "basic":
       return `text-main rounded-[5px] px-3 py-1 w-fit`;
     case "round":
-      return `text-main rounded-[21px] px-3 w-fit`;
+      return `text-main rounded-[21px] px-4 w-fit`;
     case "square":
       return `text-main rounded-[5px] px-2 aspect-square`;
     case "commentReport":
@@ -40,13 +40,13 @@ const getStyle = ({ theme, isSelected = false }: SquareBtnProps) => {
 
 const getIcon = ({ theme, icon }: SquareBtnProps) => {
   if (icon === "comment") {
-    return <ChatBubbleBottomCenterTextIcon className="w-6 h-6 pr-2" />;
+    return <ChatBubbleBottomCenterTextIcon className="w-7 h-7 pr-1" />;
   } else if (icon === "report") {
-    return <ExclamationCircleIcon className="w-5 h-5" />;
+    return <ExclamationCircleIcon className="w-6 h-6" />;
   } else if (icon === "heart") {
     switch (theme) {
       case "gameLike":
-        return <HeartIcon className="w-5 h-5" />;
+        return <HeartIcon className="w-6 h-6" />;
       case "commentLike":
         return <HeartIcon className="w-7 h-7" />;
     }
@@ -71,7 +71,7 @@ export default function SquareBtn(props: SquareBtnProps) {
         }`}
       >
         <div>{getIcon(props)}</div>
-        <MyText weight="semi" size="sm">
+        <MyText weight="bold" size="sm">
           {props.text}
         </MyText>
       </div>

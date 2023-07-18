@@ -41,7 +41,7 @@ export default function CommentItem({ commentData }: CommentItemProps) {
             ) : (
               <HeartIcon className="w-4 text-main" />
             )}
-            <MyText size="xs">{commentLikeCnt}</MyText>
+            <MyText size="sm">{commentLikeCnt}</MyText>
           </div>
           {/* <div className={styles.countItem}>
             <ExclamationCircleIcon className="w-5 text-main" />
