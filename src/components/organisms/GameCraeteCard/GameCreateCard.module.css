@@ -1,0 +1,18 @@
+.card {
+  @apply flex flex-col items-center p-4;
+  min-height: 300px;
+  box-shadow: -4px -4px 6px rgba(255, 255, 255, 0.8), 3px 3px 8px rgba(166, 180, 200, 0.7);
+  border-radius: 10px;
+}
+
+.addBtn {
+  @apply p-4 mb-5 rounded-sm text-[#FFFFFF];
+  @apply flex justify-center items-center;
+  text-align: center;
+  font-size: 24px;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.addBtn :hover {
+  cursor: pointer;
+}
