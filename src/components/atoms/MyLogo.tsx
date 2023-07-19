@@ -8,9 +8,9 @@ interface LogoProps {
 const getLogo = (size: "sm" | "lg") => {
   switch (size) {
     case "sm":
-      return <img src="/src/assets/BalanSnack_logo_s.png" />;
+      return <img src="/src/assets/BalanSnack_logo_s.svg" />;
     case "lg":
-      return <img src="/src/assets/BalanSnack_logo_l.png" />;
+      return <img src="/src/assets/BalanSnack_logo_l.svg" />;
   }
 };
 
