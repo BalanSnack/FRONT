@@ -1,5 +1,7 @@
 import React from "react";
 import { useNavigate, useLocation } from "react-router-dom";
+import { useFindJoke } from "@/api/test/testQuery";
+import type { JokeResponse } from "@/api/test/test";
 
 export default function GameRoutePage() {
   const navigate = useNavigate();
@@ -12,10 +14,13 @@ export default function GameRoutePage() {
     navigate(`/${theme}/1`, { replace: true });
   };
 
+  const { data: jokeData } = useFindJoke();
+
   return (
     <div>
       <h1>{theme} Route 페이지</h1>
       <button onClick={routeHandler}>게임으로 이동</button>
+      <div>{jokeData?.punchline}</div>
     </div>
   );
 }
