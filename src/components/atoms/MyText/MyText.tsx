@@ -47,5 +47,9 @@ export default function MyText({
   weight = "regular",
   className,
 }: myTextProps) {
-  return <span className={`${getFontStyle(size, color, weight)} ${className}`}>{children}</span>;
+  return (
+    <span data-testid="textField" className={`${getFontStyle(size, color, weight)} ${className}`}>
+      {children}
+    </span>
+  );
 }

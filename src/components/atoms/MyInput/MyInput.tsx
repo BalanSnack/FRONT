@@ -26,6 +26,7 @@ export default function MyInput({
   return (
     <div className={frameStyle(isFocused, rounded)}>
       <input
+        data-testid="textInput"
         type="text"
         className={styles.myInput}
         value={value}
@@ -35,6 +36,7 @@ export default function MyInput({
       />
       {isClearShow && (
         <XCircleIcon
+          data-testid="clearButton"
           color="#B8BBCB"
           className={styles.clearIcon}
           onClick={() => inputHandler("")}
