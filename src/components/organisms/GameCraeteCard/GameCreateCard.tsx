@@ -45,7 +45,10 @@ export default function GameCreateCard(props: propsType) {
 
   const setCate = () => {
     setCategory("카테고리 변경쓰");
+    setIsOpen(false);
   };
+
+  const categories = ["1", "2", "3", "4", "5", "6"];
 
   return (
     <>
@@ -55,7 +58,15 @@ export default function GameCreateCard(props: propsType) {
           setIsOpen(false);
         }}
       >
-        <p>HJ</p>
+        <div className={style.modal}>
+          {categories.map((category: any) => {
+            return (
+              <p className={style.categoryItem} onClick={setCate}>
+                {category}
+              </p>
+            );
+          })}
+        </div>
       </MyModal>
       <div className={getStyle(theme)}>
         <span
