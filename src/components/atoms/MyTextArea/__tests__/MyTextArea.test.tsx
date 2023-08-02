@@ -1,28 +1,36 @@
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, renderHook, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import MyTextArea from "../MyTextArea";
+import { useState } from "react";
 
 describe("MyInput", () => {
-  let testDiv: HTMLElement;
   let textAreaField: HTMLTextAreaElement;
 
-  beforeEach(() => {
-    testDiv = document.createElement("div");
-    testDiv.setAttribute("id", "testDiv");
-    document.body.appendChild(testDiv);
-  });
-
-  afterEach(() => {
-    document.body.removeChild(testDiv);
-  });
-
   it("renders text field", () => {
-    const initialValue = "Hello";
-    render(<MyTextArea value={initialValue} inputHandler={() => ()}/>, { container: testDiv });
+    const { result } = renderHook(() => useState("hello"));
+    const [val, setVal] = result.current;
+    const onChange: React.Dispatch<React.SetStateAction<string>> = (value) => {
+      setVal(value);
+    };
+
+    render(<MyTextArea value={val} inputHandler={onChange} />);
     textAreaField = screen.getByTestId("textAreaField");
 
     // 렌더링 테스트
-    expect(textAreaField).toBeInTheDocument();
-    expect(textAreaField.textContent).toBe("Hello");
+    expect(screen.getAllByDisplayValue(val)).toBeTruthy();
+  });
+
+  it("renders text field", () => {
+    const { result } = renderHook(() => useState("hello"));
+    const [val, setVal] = result.current;
+    const onChange: React.Dispatch<React.SetStateAction<string>> = (value) => {
+      setVal(value);
+    };
+
+    render(<MyTextArea value={val} inputHandler={onChange} />);
+    textAreaField = screen.getByTestId("textAreaField");
+
+    onChange("CHANGED");
+    expect(val).toBe("CHANGED");
   });
 });
