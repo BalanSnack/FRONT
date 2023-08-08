@@ -73,7 +73,7 @@ export default function GamePage() {
           />
         </div>
       </div>
-      <div className="btn-group flex justify-between pt-5 pb-3">
+      <div className="btn-group flex justify-between pt-5 pb-1">
         <SquareBtn
           theme="round"
           text={`${gameData.comments.length}`}

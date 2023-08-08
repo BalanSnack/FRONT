@@ -27,17 +27,19 @@ export default function CommentItem({ commentData }: CommentItemProps) {
     <div className={styles.itemBox}>
       <div className={styles.topArea}>
         <div className="flex items-end gap-2">
-          <MyText weight="medium">{commentData.author.nickname}</MyText>
-          <MyText color="font2" size="sm">
+          <MyText size="sm" weight="medium">
+            {commentData.author.nickname}
+          </MyText>
+          <MyText color="font2" size="xs">
             {commentData.createdAt}
           </MyText>
         </div>
         <div className={styles.countArea}>
           <div className={styles.countItem} onClick={commentLikeHandler}>
             {commentIsLiked ? (
-              <SolidHeartIcon className="w-5 text-pink-900" />
+              <SolidHeartIcon className="w-4 text-pink-900" />
             ) : (
-              <HeartIcon className="w-5 text-main" />
+              <HeartIcon className="w-4 text-main" />
             )}
             <MyText size="sm">{commentLikeCnt}</MyText>
           </div>
@@ -48,7 +50,9 @@ export default function CommentItem({ commentData }: CommentItemProps) {
         </div>
       </div>
       <div>
-        <MyText color="font1">{commentData.content}</MyText>
+        <MyText size="sm" color="font1">
+          {commentData.content}
+        </MyText>
       </div>
     </div>
   );
