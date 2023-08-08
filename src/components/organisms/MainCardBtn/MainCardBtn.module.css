@@ -1,12 +1,63 @@
 .cardBtn {
-  @apply shadow-card rounded-md flex justify-center items-center font-suitRegular px-4 py-2;
+  @apply rounded-md flex justify-center items-center font-suitRegular px-4 py-2;
 }
 
 .cardBtn:hover {
   box-shadow: -0.18px -0.18px 3.54px #ffffff, 0.18px 0.18px 3.54px rgba(174, 174, 192, 0.4);
 }
 
-.cardBtn:active,
-.cardBtn:focus {
-  @apply shadow-selectedCard;
+.popularCardBtn {
+  box-shadow: 2px 2px 5px 0px rgba(165, 162, 178, 0.9), -2px -2px 4px 0px rgba(247, 242, 255, 0.9),
+    2px -2px 4px 0px rgba(165, 162, 178, 0.2), -2px 2px 4px 0px rgba(165, 162, 178, 0.2),
+    -1px -1px 2px 0px rgba(165, 162, 178, 0.5) inset, 1px 1px 2px 0px rgba(247, 242, 255, 0.3) inset;
+}
+
+.popularCardBtn:active,
+.popularCardBtn:focus {
+  box-shadow: 2px 2px 5px 0px rgba(165, 162, 178, 0.9) inset,
+    -2px -2px 4px 0px rgba(247, 242, 255, 0.9) inset,
+    2px -2px 4px 0px rgba(165, 162, 178, 0.2) inset, -2px 2px 4px 0px rgba(165, 162, 178, 0.2) inset,
+    -1px -1px 2px 0px rgba(165, 162, 178, 0.5), 1px 1px 2px 0px rgba(247, 242, 255, 0.3);
+}
+
+.newCardBtn {
+  box-shadow: 1px 1px 3px 0px rgba(198, 172, 181, 0.9), -1px -1px 2px 0px rgba(255, 242, 255, 0.9),
+    1px -1px 2px 0px rgba(198, 172, 181, 0.2), -1px 1px 2px 0px rgba(198, 172, 181, 0.2),
+    -1px -1px 2px 0px rgba(198, 172, 181, 0.5) inset, 1px 1px 2px 0px rgba(255, 242, 255, 0.3) inset;
+}
+
+.newCardBtn:active,
+.newCardBtn:focus {
+  box-shadow: 1px 1px 3px 0px rgba(198, 172, 181, 0.9) inset,
+    -1px -1px 2px 0px rgba(255, 242, 255, 0.9) inset,
+    1px -1px 2px 0px rgba(198, 172, 181, 0.2) inset, -1px 1px 2px 0px rgba(198, 172, 181, 0.2) inset,
+    -1px -1px 2px 0px rgba(198, 172, 181, 0.5), 1px 1px 2px 0px rgba(255, 242, 255, 0.3);
+}
+
+.randomCardBtn {
+  box-shadow: 1px 1px 3px 0px rgba(182, 169, 183, 0.9), -1px -1px 2px 0px rgba(255, 239, 255, 0.9),
+    1px -1px 2px 0px rgba(182, 169, 183, 0.2), -1px 1px 2px 0px rgba(182, 169, 183, 0.2),
+    -1px -1px 2px 0px rgba(182, 169, 183, 0.5) inset, 1px 1px 2px 0px rgba(255, 239, 255, 0.3) inset;
+}
+
+.randomCardBtn:active,
+.randomCardBtn:focus {
+  box-shadow: 1px 1px 3px 0px rgba(182, 169, 183, 0.9) inset,
+    -1px -1px 2px 0px rgba(255, 239, 255, 0.9) inset,
+    1px -1px 2px 0px rgba(182, 169, 183, 0.2) inset, -1px 1px 2px 0px rgba(182, 169, 183, 0.2) inset,
+    -1px -1px 2px 0px rgba(182, 169, 183, 0.5), 1px 1px 2px 0px rgba(255, 239, 255, 0.3);
+}
+
+.categoryCardBtn {
+  box-shadow: 1px 1px 3px 0px rgba(144, 163, 188, 0.9), -1px -1px 2px 0px rgba(204, 229, 255, 0.9),
+    1px -1px 2px 0px rgba(144, 163, 188, 0.2), -1px 1px 2px 0px rgba(144, 163, 188, 0.2),
+    -1px -1px 2px 0px rgba(144, 163, 188, 0.5) inset, 1px 1px 2px 0px rgba(204, 229, 255, 0.3) inset;
+}
+
+.categoryCardBtn:active,
+.categoryCardBtn:focus {
+  box-shadow: 1px 1px 3px 0px rgba(144, 163, 188, 0.9) inset,
+    -1px -1px 2px 0px rgba(204, 229, 255, 0.9) inset,
+    1px -1px 2px 0px rgba(144, 163, 188, 0.2) inset, -1px 1px 2px 0px rgba(144, 163, 188, 0.2) inset,
+    -1px -1px 2px 0px rgba(144, 163, 188, 0.5), 1px 1px 2px 0px rgba(204, 229, 255, 0.3);
 }

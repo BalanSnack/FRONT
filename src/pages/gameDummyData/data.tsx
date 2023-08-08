@@ -7,7 +7,36 @@ const gameData: Game = {
     {
       commentID: 1,
       content: "댓글1",
-      childComments: [],
+      childComments: [
+        {
+          commentID: 1,
+          replyID: 1,
+          content: "댓글4",
+          isLiked: false,
+          isReported: false,
+          likeCount: 12,
+          createdAt: "2023-07-10 12:10:10",
+          deletedAt: "",
+          author: {
+            avatarID: 4,
+            nickname: "작성자4",
+          },
+        },
+        {
+          commentID: 5,
+          replyID: 2,
+          content: "댓글5",
+          isLiked: true,
+          isReported: false,
+          likeCount: 15,
+          createdAt: "2023-04-23 08:10:10",
+          deletedAt: "",
+          author: {
+            avatarID: 5,
+            nickname: "작성자5",
+          },
+        },
+      ],
       gameID: 1,
       isLiked: true,
       isReported: false,

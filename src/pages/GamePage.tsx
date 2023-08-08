@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import MyLogo from "@/components/atoms/MyLogo";
 import GameCardBtn from "@/components/organisms/GameCardBtn/GameCardBtn";
 import MyText from "@/components/atoms/MyText/MyText";
@@ -8,6 +8,7 @@ import CommentTable from "@/components/molecules/Comment/CommentTable";
 import { gameData } from "./gameDummyData/data";
 
 export default function GamePage() {
+  // const [panelSelected, setPanelSelected] = useState(false);
   const [commentsSelected, setCommentsSelected] = useState(false);
   const [gameReport, setGameReport] = useState(false);
   const [gameLike, setGameLike] = useState(false);
@@ -20,6 +21,21 @@ export default function GamePage() {
   };
   const gameLikeHandler = () => {
     setGameLike(!gameLike);
+  };
+
+  // panel selected 관련 시도 => 추후 수정 예정
+  const [leftPanelData, setLeftPanelData] = useState(gameData.panels[0]);
+  const [leftPanelSelected, setLeftPanelSelected] = useState(gameData.panels[0].isSelected);
+  const [rightPanelData, setRightPanelData] = useState(gameData.panels[1]);
+  const [rightPanelSelected, setRightPanelSelected] = useState(gameData.panels[1].isSelected);
+
+  const leftPanelHandler = () => {
+    setLeftPanelSelected(!leftPanelSelected);
+    setRightPanelSelected(false);
+  };
+  const rightPanelHandler = () => {
+    setRightPanelSelected(!rightPanelSelected);
+    setLeftPanelSelected(false);
   };
 
   return (
@@ -35,9 +51,26 @@ export default function GamePage() {
           {gameData.title}
         </MyText>
         <div className="flex gap-5 h-5/6">
-          {gameData.panels.map((panel) => {
-            return <GameCardBtn props={panel} key={panel.location} />;
-          })}
+          {/* {gameData.panels.map((panel) => {
+            return (
+              <GameCardBtn
+                props={panel}
+                isSelected={panel.isSelected}
+                clickHandler={panelBtnHandler}
+                key={panel.location}
+              />
+            );
+          })} */}
+          <GameCardBtn
+            props={leftPanelData}
+            isSelected={leftPanelSelected}
+            clickHandler={leftPanelHandler}
+          />
+          <GameCardBtn
+            props={rightPanelData}
+            isSelected={rightPanelSelected}
+            clickHandler={rightPanelHandler}
+          />
         </div>
       </div>
       <div className="btn-group flex justify-between pt-5 pb-3">
