@@ -1,0 +1,9 @@
+.btnWrap {
+  @apply flex flex-col items-center justify-center gap-1;
+  @apply w-[80px] h-[80px] rounded-[20px];
+  @apply shadow-square;
+}
+
+.btnWrap:active {
+  @apply shadow-selectedSquare;
+}
