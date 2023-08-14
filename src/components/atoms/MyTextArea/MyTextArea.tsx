@@ -8,15 +8,14 @@ type inputProps = {
 
 export default function MyTextArea({ value, inputHandler }: inputProps) {
   return (
-    <>
-      <div className="w-full flex">
-        <textarea
-          id="inputValue"
-          className={styles.inputBox}
-          value={value}
-          onChange={(e) => inputHandler(e.target.value)}
-        />
-      </div>
-    </>
+    <div className="w-full flex h-full">
+      <textarea
+        data-testid="textAreaField"
+        id="inputValue"
+        className={styles.inputBox}
+        value={value}
+        onChange={(e) => inputHandler(e.target.value)}
+      />
+    </div>
   );
 }
