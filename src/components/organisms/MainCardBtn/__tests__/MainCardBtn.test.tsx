@@ -1,6 +1,6 @@
 import MainCardBtn from "../MainCardBtn";
 import styles from "../MainCardBtn.module.css";
-import { render } from "@testing-library/react";
+import { render, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom";
 
 const mockedUsedNavigate = jest.fn();
@@ -47,5 +47,14 @@ describe("MainCardBtn", () => {
     const { getByRole } = render(<MainCardBtn theme={theme} />);
     const div = getByRole("mainCardBtn");
     expect(div).toHaveClass(themeStyle[theme]);
+  });
+
+  it("calls useNavigate when click", () => {
+    const { getByRole } = render(<MainCardBtn theme={theme} />);
+    const btn = getByRole("mainCardBtn");
+
+    fireEvent.click(btn);
+
+    expect(mockedUsedNavigate).toHaveBeenCalledWith("/popular");
   });
 });
