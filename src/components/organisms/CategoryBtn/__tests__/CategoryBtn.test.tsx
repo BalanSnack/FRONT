@@ -29,6 +29,6 @@ describe("CategoryBtn", () => {
 
     fireEvent.click(btn);
 
-    expect(mockedUsedNavigate).toHaveBeenCalledWith("/category/동물");
+    expect(mockedUsedNavigate).toHaveBeenCalledWith("/category/animal");
   });
 });

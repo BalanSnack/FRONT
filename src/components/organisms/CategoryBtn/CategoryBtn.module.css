@@ -1,6 +1,6 @@
 .btnWrap {
-  @apply flex flex-col items-center justify-center gap-1;
-  @apply w-[80px] h-[80px] rounded-[20px];
+  @apply flex  items-center justify-center gap-5;
+  @apply w-full h-[70px] rounded-[20px];
   @apply shadow-square;
 }
 

@@ -10,13 +10,15 @@ interface Props {
   img: string;
 }
 
-export default function CategoryBtn({ title, img }: Props) {
+export default function CategoryBtn({ type, title, img }: Props) {
   const navigate = useNavigate();
 
   return (
-    <div className={styles.btnWrap} onClick={() => navigate(`/category/${title}`)}>
-      <MyIcon name={img} size="sm" />
-      <MyText weight="semi">{title}</MyText>
+    <div className={styles.btnWrap} onClick={() => navigate(`/category/${type}`)}>
+      <MyIcon name={img} />
+      <MyText weight="semi" size="md">
+        {title}
+      </MyText>
     </div>
   );
 }

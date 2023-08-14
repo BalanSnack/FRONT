@@ -1,7 +1,6 @@
 import React from "react";
 import NavTemplate from "@/components/templates/NavTemplate";
 import CategoryBtn from "@/components/organisms/CategoryBtn/CategoryBtn";
-import MyText from "@/components/atoms/MyText/MyText";
 
 const categoryList = [
   {
@@ -69,11 +68,8 @@ const categoryList = [
 export default function CategoryListPage() {
   return (
     <NavTemplate>
-      <div className="flex flex-col justify-center items-center px-5 pt-10">
-        <MyText size="lg" weight="bold" className="mb-10">
-          게임 카테고리
-        </MyText>
-        <div className="grid grid-cols-3 sm:grid-cols-6 gap-5 w-fit">
+      <div className="flex flex-col justify-center items-center pt-10">
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-5 w-full">
           {categoryList.map((category) => (
             <CategoryBtn
               type={category.type}
