@@ -1,0 +1,41 @@
+.categoryHeader {
+  @apply flex flex-col gap-3;
+}
+
+.topWrap {
+  @apply flex justify-between items-center;
+}
+
+.gameBtn {
+  @apply px-2 py-1 rounded-[5px] cursor-pointer;
+  @apply bg-gradient-to-r from-pink-500 to-sky-500;
+  box-shadow: 2px 2px 5px 0px rgba(165, 162, 178, 0.9), -2px -2px 4px 0px rgba(247, 242, 255, 0.9),
+    2px -2px 4px 0px rgba(165, 162, 178, 0.2), -2px 2px 4px 0px rgba(165, 162, 178, 0.2),
+    -1px -1px 2px 0px rgba(165, 162, 178, 0.5) inset, 1px 1px 2px 0px rgba(247, 242, 255, 0.3) inset;
+}
+
+.gameBtn:active {
+  box-shadow: 2px 2px 5px 0px rgba(165, 162, 178, 0.9) inset,
+    -2px -2px 4px 0px rgba(247, 242, 255, 0.9) inset,
+    2px -2px 4px 0px rgba(165, 162, 178, 0.2) inset, -2px 2px 4px 0px rgba(165, 162, 178, 0.2) inset,
+    -1px -1px 2px 0px rgba(165, 162, 178, 0.5), 1px 1px 2px 0px rgba(247, 242, 255, 0.3);
+}
+
+.searchBar {
+  @apply flex px-3 pt-3 pb-2 flex-auto gap-1 rounded-[30px] text-sm text-font1;
+  font-family: "gmarket";
+  background: rgba(246, 246, 246, 1);
+}
+
+.searchBar input {
+  @apply flex-1;
+  background: transparent;
+}
+
+.searchBar input:focus {
+  outline: none;
+}
+
+.searchIcon {
+  @apply w-5 cursor-pointer;
+}
