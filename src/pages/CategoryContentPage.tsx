@@ -3,6 +3,10 @@ import NavTemplate from "@/components/templates/NavTemplate";
 import CategoryTopArea from "@/components/organisms/CategoryHeader/CategoryHeader";
 import { useLocation, useNavigate } from "react-router-dom";
 import { debounce } from "lodash";
+import { hostData } from "@/components/organisms/MyInfoContentTable/dummyData/data";
+import type { GameList } from "@/types/game";
+import GameItem from "@/components/molecules/GameItem/GameItem";
+import Pagination from "@/components/molecules/Pagination/Pagination";
 
 type CategoryList = {
   [key: string]: {
@@ -17,13 +21,7 @@ export default function CategoryContentPage() {
   const categoryType: string = location.pathname.split("/")[2];
   const [page, setPage] = React.useState<number>(Number(location.search.split("=")[1]) | 1);
   const keyword = location.search.split("=")[2] || "";
-
-  const keywordHanlder = debounce((e: React.ChangeEvent<HTMLInputElement>) => {
-    navigate({
-      pathname: `/category/${categoryType}`,
-      search: e.target.value ? `?page=${page}&q=${e.target.value}` : `?page=${page}`,
-    });
-  }, 500);
+  const [gameData, setGameData] = useState<GameList>(hostData);
 
   const categoryList: CategoryList = {
     relationship: {
@@ -76,13 +74,44 @@ export default function CategoryContentPage() {
     },
   };
 
+  const keywordHanlder = debounce((e: React.ChangeEvent<HTMLInputElement>) => {
+    navigate({
+      pathname: `/category/${categoryType}`,
+      search: e.target.value ? `?page=${page}&q=${e.target.value}` : `?page=${page}`,
+    });
+  }, 500);
+
+  const pageHandler = (pageNum: number) => {
+    setPage(pageNum);
+    navigate({
+      pathname: `/category/${categoryType}`,
+      search: keyword ? `?page=${pageNum}&q=${keyword}` : `?page=${pageNum}`,
+    });
+  };
+
+  const getData = () => {
+    return gameData.games.map((game, idx) => <GameItem key={`game-${idx}`} gameData={game} />);
+  };
+
   return (
     <NavTemplate>
-      <CategoryTopArea
-        category={categoryList[categoryType]}
-        keyword={keyword}
-        keywordHanlder={keywordHanlder}
-      />
+      <div className="flex flex-col h-full">
+        <CategoryTopArea
+          category={categoryList[categoryType]}
+          keyword={keyword}
+          keywordHanlder={keywordHanlder}
+        />
+        <div className="flex-1 flex-col flex gap-2 mt-2">
+          <div>{getData()}</div>
+          <div className="flex justify-center">
+            <Pagination
+              page={page}
+              totalPage={gameData.totalPageNumber}
+              pageHandler={pageHandler}
+            />
+          </div>
+        </div>
+      </div>
     </NavTemplate>
   );
 }

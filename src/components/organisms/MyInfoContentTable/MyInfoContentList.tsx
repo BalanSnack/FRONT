@@ -5,17 +5,15 @@ import MyInfoCommentItem from "@/components/organisms/MyInfoContentTable/MyInfoC
 import Pagination from "@/components/molecules/Pagination/Pagination";
 import MyText from "@/components/atoms/MyText/MyText";
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 
 interface Props {
   selectedContent: "host" | "comment" | "like";
 }
 
 export default function MyInfoContentList({ selectedContent }: Props) {
-  const navigate = useNavigate();
-
   const [page, setPage] = useState(1);
   const [totalPage, setTotalPage] = useState<number>(1);
+
   const pageHandler = (page: number) => {
     setPage(page);
   };
@@ -42,6 +40,7 @@ export default function MyInfoContentList({ selectedContent }: Props) {
       setTotalPage(likeData.totalPageNumber);
     }
   }, [selectedContent]);
+
   return (
     <div className="flex-1 flex-col flex gap-2">
       {totalPage ? (
