@@ -12,5 +12,5 @@ export default function MyIcon({ name, size = "md" }: Props) {
     lg: "w-[5rem]",
   };
 
-  return <img className={sizes[size]} src={`src/assets/icons/${name}_3d.png`} />;
+  return <img className={sizes[size]} src={`/src/assets/icons/${name}_3d.png`} />;
 }

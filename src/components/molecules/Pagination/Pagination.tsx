@@ -40,7 +40,7 @@ export default function Pagination(props: Props) {
   };
 
   return (
-    <div className="flex gap-2">
+    <div className="flex gap-2 w-full justify-center">
       <SquareBtn
         theme="square"
         icon="leftArrow"
