@@ -41,6 +41,6 @@ describe("SquareBtn", () => {
 
     fireEvent.click(squareBtn);
 
-    expect(squareBtn).toBeCalled();
+    expect(clickMock).toBeCalled();
   });
 });
