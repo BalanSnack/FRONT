@@ -64,13 +64,14 @@ export default function SquareBtn(props: SquareBtnProps) {
         props.isSelected ? `${styles.selectedSquareBtn}` : `${styles.squareBtn}`
       }`}
       onClick={props.clickHandler}
+      data-testid="squareBtn"
     >
       <div
         className={`items-center flex text-center font-suitMedium w-full h-full ${
           props.theme === "square" ? "justify-center" : "justify-between"
         }`}
       >
-        <div>{getIcon(props)}</div>
+        <div data-testid="squareBtnIcon">{getIcon(props)}</div>
         <MyText weight="bold" size="sm">
           {props.text}
         </MyText>
